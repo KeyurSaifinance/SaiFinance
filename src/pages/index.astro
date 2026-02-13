@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Services from "../components/Services.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
 		<Header />
 	</Fragment>
 
-	<!-- Hero -->
+	<!-- Hero (section 1)-->
 	<section class="relative overflow-hidden bg-[#0f2147] text-white">
 		<div class="absolute inset-0">
 			<img
@@ -23,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
 			<div class="absolute"></div>
 		</div>
 
-		<div class="relative mx-auto max-w-6xl px-6 py-16 lg:py-24">
+		<div class="relative mx-auto max-w-6xl px-0 py-16 lg:py-24">
 			<div class="max-w-2xl">
 				<span
 					class="inline-flex items-center gap-2
@@ -101,7 +102,9 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</div>
 
-		<div class="absolute bottom-0 right-0 hidden md:block bg-white rounded-tl-4xl shadow-lg">
+		<div
+			class="absolute bottom-0 right-0 hidden md:block bg-white rounded-tl-4xl shadow-lg"
+		>
 			<img
 				src="/img/img_1.webp"
 				alt="Chat with us"
@@ -110,6 +113,8 @@ import Layout from "../layouts/Layout.astro";
 			/>
 		</div>
 	</section>
+
+	<Services />
 
 	<Fragment slot="footer">
 		<Footer />

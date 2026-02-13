@@ -3,10 +3,12 @@
 :root {
   --color-primary: #14254a;
   --color-text: #0f172a;
+  --color-secondary: #5A72A7;
+
 }
 
 body {
-  font-family: "Epilogue", "Poppins", "Inter", "Space Grotesk", "DM Sans", sans-serif;
+  font-family: "Epilogue", "Poppins", "Inter", "Space Grotesk", "DM Sans","Arial", sans-serif;
   color: var(--color-text);
 }
 
@@ -16,4 +18,8 @@ body {
 
 .bg-primary {
   background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
 }
