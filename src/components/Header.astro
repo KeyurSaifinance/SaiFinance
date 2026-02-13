@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header class="border-b border-gray-200 bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+            <img src="/img/logo.webp" alt="SAI Finance" class="h-10 w-auto" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden items-center gap-8 lg:flex">
+            <a
+                href="/"
+                class="text-[20px] font-bold leading-[28.18px] tracking-normal text-primary hover:opacity-80 text-Poppins"
+            >
+                Home
+            </a>
+
+            <button
+                type="button"
+                class="flex text-[20px] font-bold leading-[28.18px] tracking-normal text-slate-500 hover:text-primary hover:opacity-80 text-Poppins"
+            >
+                Services
+                <Icon name="ph:caret-down" size="16" class="mt-2 ml-1" />
+            </button>
+            <button
+                type="button"
+                class="flex text-[20px] font-bold leading-[28.18px] tracking-normal text-slate-500 hover:text-primary hover:opacity-80 text-Poppins"
+            >
+                Calculators
+                <Icon name="ph:caret-down" size="14" class="mt-2 ml-1" />
+            </button>
+            <a
+                href="/blog"
+                class="text-[20px] font-bold leading-[28.18px] tracking-normal text-slate-500 hover:text-primary hover:opacity-80 text-Poppins"
+                >Blog</a
+            >
+            <a
+                href="/resources"
+                class="text-[20px] font-bold leading-[28.18px] tracking-normal text-slate-500 hover:text-primary hover:opacity-80 text-Poppins"
+                >Resources</a
+            >
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+            <a
+                href="/contact"
+                class="hidden lg:inline-flex items-center gap-4 rounded-full
+         px-5 py-2.5
+         font-Poppins font-semibold
+         text-[16px] leading-[100%] tracking-normal
+         text-white shadow-sm hover:opacity-90
+         bg-[linear-gradient(270deg,#17284D_0%,#5A72A7_100%)]"
+            >
+                Get in Touch
+                <span
+                    class="inline-flex h-6 w-6 items-center justify-center
+           rounded-full border border-white/50
+           bg-white text-primary"
+                >
+                    <Icon name="ph:arrow-up-right" size="16" />
+                </span>
+            </a>
+
+            <button
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full text-primary hover:bg-slate-50"
+                aria-label="Open menu"
+            >
+                <Icon name="ph:list" size="20" />
+            </button>
+        </div>
+    </div>
+</header>

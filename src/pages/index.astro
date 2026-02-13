@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -6,6 +8,20 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<!-- <Welcome /> -->
-	 <h1 class="text-4xl font-bold text-red-500 text-center mt-20">Welcome to SAI Finance</h1>
+	<Fragment slot="header">
+		<Header />
+	</Fragment>
+
+	<!-- section 1 -->
+	 <div>
+		<img
+			src="/img/hero.webp"
+			alt="SAI Finance"
+			class=" w-full object-cover"	
+		/>
+		
+	 </div>
+	<Fragment slot="footer">
+		<Footer/>
+	</Fragment>
 </Layout>

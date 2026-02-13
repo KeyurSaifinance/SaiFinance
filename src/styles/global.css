@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+:root {
+  --color-primary: #14254a;
+  --color-text: #0f172a;
+}
+
+body {
+  font-family: "Epilogue", "Poppins", "Inter", "Space Grotesk", sans-serif;
+  color: var(--color-text);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
