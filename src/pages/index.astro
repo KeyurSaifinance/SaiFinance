@@ -1,7 +1,7 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,16 +12,106 @@ import Layout from '../layouts/Layout.astro';
 		<Header />
 	</Fragment>
 
-	<!-- section 1 -->
-	 <div>
-		<img
-			src="/img/hero.webp"
-			alt="SAI Finance"
-			class=" w-full object-cover"	
-		/>
-		
-	 </div>
+	<!-- Hero -->
+	<section class="relative overflow-hidden bg-[#0f2147] text-white">
+		<div class="absolute inset-0">
+			<img
+				src="/img/hero.webp"
+				alt="SAI Finance"
+				class="h-full w-full object-cover"
+			/>
+			<div class="absolute"></div>
+		</div>
+
+		<div class="relative mx-auto max-w-6xl px-6 py-16 lg:py-24">
+			<div class="max-w-2xl">
+				<span
+					class="inline-flex items-center gap-2
+         rounded-full border border-white/30
+         px-6 py-1
+         font-Poppins font-medium
+         text-[21.74px] leading-[32.61px] tracking-normal
+         capitalize
+         text-white/90"
+				>
+					+ Expert Financing +
+				</span>
+
+				<h1 class="mt-6 text-4xl font-bold leading-tight lg:text-5xl">
+					Build Wealth <br /> Through Property <br />— with the right <br
+					/> Finance Strategy.
+				</h1>
+			</div>
+
+			<p
+				class="mt-4 max-w-xl
+         font-DM Sans font-normal
+         text-[21.74px] leading-[29.13px] tracking-normal
+         text-white/80"
+			>
+				Specialised mortgage solutions for Australian property investors
+				and first home buyers, backed by expert guidance on every step
+				of the way.
+			</p>
+
+			<div class="mt-8 flex flex-wrap items-center gap-4">
+				<a
+					href="/contact"
+					class="inline-flex items-center gap-2
+         rounded-full
+         bg-white
+         border border-[#9CABC3]
+         pl-5 pr-2 py-2
+         font-Poppins font-bold
+         text-[15px] leading-[100%] tracking-normal
+         text-[#9CABC3]"
+				>
+					Book a Free Strategy Call
+					<span
+						class="inline-flex h-8 w-8 items-center justify-center
+           rounded-full bg-[#0f2147] text-white"
+					>
+						&#8599;
+					</span>
+				</a>
+
+				<a
+					href="tel:+61433967374"
+					class="inline-flex items-center gap-2 text-sm font-semibold text-white/90"
+				>
+					<span
+						class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40"
+					>
+						&#9742;
+					</span>
+					<span
+						class="font-Inter font-normal text-[15.22px] leading-[15.22px] tracking-normal text-white"
+					>
+						Explore your borrowing power
+						<span
+							class="block
+         font-Poppins font-medium
+         text-[17.39px] leading-[28.26px] tracking-normal
+         text-white/70 mt-1"
+						>
+							+61 433 967 374
+						</span>
+					</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="absolute bottom-0 right-0 hidden md:block bg-white rounded-tl-4xl shadow-lg">
+			<img
+				src="/img/img_1.webp"
+				alt="Chat with us"
+				class="h-[70px] w-auto rounded-lg shadow-lg"
+				loading="lazy"
+			/>
+		</div>
+	</section>
+
 	<Fragment slot="footer">
-		<Footer/>
+		<Footer />
 	</Fragment>
 </Layout>
