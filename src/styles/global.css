@@ -6,6 +6,7 @@
   --font-Inter: 'Inter';
   --font-Space-Grotesk: 'Space Grotesk';
   --font-DM-Sans: 'DM Sans';
+  --font-Arial: 'Arial';
 
 }
 :root {
@@ -57,6 +58,9 @@ body {
   }
   .font-dm-sans {
     font-family: var(--font-DM-Sans);
+  }
+  .font-Arial {
+    font-family: var(--font-Arial);
   }
 
 }
