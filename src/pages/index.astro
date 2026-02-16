@@ -114,9 +114,210 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 	</section>
 
+	<!-- section 2 -->
 	<Services />
 
-	<Fragment slot="footer">
-		<Footer />
-	</Fragment>
+	<!-- section 3 -->
+	<section class="mt-8">
+		<div class="mx-auto max-w-7xl px-6">
+			<div class="grid lg:grid-cols-2 lg:gap-12 gap-5">
+				<!-- LEFT SIDE -->
+				<div class="flex flex-col">
+					<div class="flex lg:flex-row flex-col gap-10 lg:ml-20">
+						<!-- Badge -->
+						<div>
+							<span
+								class="inline-flex items-center justify-center
+                 rounded-full bg-[#1d2d53]
+                 w-34 px-3 py-1
+                 text-[18px] leading-[28px]
+                 font-normal text-white capitalize"
+							>
+								Our Value
+							</span>
+						</div>
+
+						<div class="">
+							<!-- Heading -->
+							<h1
+								class="font-DM Sans font-semibold
+                 text-4xl text-5xl lg:text-[40px]
+                 leading-tight lg:leading-[50px]
+                 bg-gradient-to-b from-[#5A72A7] to-[#17284D]
+                 bg-clip-text text-transparent"
+							>
+								Your success <br class="hidden sm:block" />
+								is our priority.
+							</h1>
+
+							<!-- Paragraph -->
+							<p
+								class="mt-2 max-w-lg font-Inter
+                 text-[16px] leading-[28px]
+                 text-[#15274B]"
+							>
+								Our mission is to empower businesses of all
+								sizes to thrive in an ever-changing marketplace.
+							</p>
+						</div>
+					</div>
+					<!-- Image -->
+					<img
+						src="/img/our_value.webp"
+						alt="SAI Finance"
+						class="w-full h-full lg:-mt-24 lg:-ml-16"
+					/>
+				</div>
+
+				<!-- RIGHT SIDE VALUES -->
+				<div class="grid gap-y-4 gap-x-8 lg:grid-cols-2 grid-cols-1">
+					<!-- Item -->
+					<div class="flex flex-col items-start gap-4">
+						<div>
+							<img src="/img/icon_1.png" class="w-12 h-12" />
+						</div>
+						<div>
+							<h3
+								class="font-Poppins font-semibold
+         text-[20px] leading-[26.8px] tracking-normal
+         bg-gradient-to-l from-[#17284D] to-[#5A72A7]
+         bg-clip-text text-transparent"
+							>
+								40+ lenders
+							</h3>
+
+							<p
+								class="mt-2 font-Inter font-normal text-[15px] leading-[26px] tracking-normal text-primary"
+							>
+								Our lending portfolio includes all major banks,
+								cooperatives, and non-banking financial
+								institutions.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-start gap-4">
+						<div>
+							<img src="/img/icon_2.png" class="w-12 h-12" />
+						</div>
+						<div>
+							<h3
+								class="font-Poppins font-semibold
+         text-[20px] leading-[26.8px] tracking-normal
+         bg-gradient-to-l from-[#17284D] to-[#5A72A7]
+         bg-clip-text text-transparent"
+							>
+								Personalised Loan Guidance
+							</h3>
+							<p
+								class="mt-2 font-Inter font-normal text-[15px] leading-[26px] tracking-normal text-primary"
+							>
+								We tailor our services to each client’s unique
+								needs, aligning our approach with their
+								financial goals and current circumstances.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-start gap-4">
+						<div>
+							<img src="/img/icon_3.png" class="w-12 h-12" />
+						</div>
+						<div>
+							<h3
+								class="font-Poppins font-semibold
+         text-[20px] leading-[26.8px] tracking-normal
+         bg-gradient-to-l from-[#17284D] to-[#5A72A7]
+         bg-clip-text text-transparent"
+							>
+								Excellent Customer Service
+							</h3>
+							<p
+								class="mt-2 font-Inter font-normal text-[15px] leading-[26px] tracking-normal text-primary"
+							>
+								We provide clear guidance and timely updates
+								throughout the process to ensure a smooth and
+								informed loan experience.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-start gap-4">
+						<div>
+							<img src="/img/icon_5.png" class="w-12 h-12" />
+						</div>
+						<div>
+							<h3
+								class="font-Poppins font-semibold
+         text-[20px] leading-[26.8px] tracking-normal
+         bg-gradient-to-l from-[#17284D] to-[#5A72A7]
+         bg-clip-text text-transparent"
+							>
+								Fast Approval Process
+							</h3>
+							<p
+								class="mt-2 font-Inter font-normal text-[15px] leading-[26px] tracking-normal text-primary"
+							>
+								Experience fast, hassle-free loan approvals
+								through our digitally managed process, supported
+								by clear upfront document requirements.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col items-start gap-4">
+						<div>
+							<img src="/img/icon_5.png" class="w-12 h-12" />
+						</div>
+						<div>
+							<h3
+								class="font-Poppins font-semibold
+         text-[20px] leading-[26.8px] tracking-normal
+         bg-gradient-to-l from-[#17284D] to-[#5A72A7]
+         bg-clip-text text-transparent"
+							>
+								ACL, CRN Licensee & FBAA Member
+							</h3>
+							<p
+								class="mt-2 font-Inter font-normal text-[15px] leading-[26px] tracking-normal text-primary"
+							>
+								In addition to our extensive experience and
+								refined processes, we hold all required industry
+								licenses and memberships, further strengthening
+								our credibility.
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="flex flex-col items-center justify-center text-center"
+					>
+						<a
+							href="/contact"
+							class="inline-flex items-center gap-2
+         rounded-full
+         bg-primary
+         border border-[#9CABC3]
+         pl-5 pr-2 py-2
+         font-Poppins font-bold
+         text-[15px] leading-[100%] tracking-normal
+         text-white"
+						>
+							More About Us
+							<span
+								class="inline-flex h-8 w-8 items-center justify-center
+           rounded-full bg-white text-primary"
+							>
+								&#8599;
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<Fragment slot="footer">
+			<Footer />
+		</Fragment>
+	</section>
 </Layout>
