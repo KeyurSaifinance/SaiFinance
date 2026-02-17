@@ -28,7 +28,7 @@ import Faq from "../components/Faq.astro";
 			<div class="absolute"></div>
 		</div>
 
-		<div class="relative mx-auto max-w-6xl px-0 py-16 lg:py-24">
+		<div class="relative mx-auto max-w-6xl lg:px-0 px-6 py-16 lg:py-24">
 			<div class="max-w-2xl">
 				<span
 					class="inline-flex items-center gap-2
@@ -39,19 +39,50 @@ import Faq from "../components/Faq.astro";
          capitalize
          text-white/90"
 				>
-					<img src="/img/flower.png"> Expert Financing <img src="/img/flower.png">
+					<img src="/img/flower.png" /> Expert Financing <img
+						src="/img/flower.png"
+					/>
 				</span>
 
-				<h1 class="mt-6 text-4xl font-bold leading-tight lg:text-5xl">
-					Build Wealth <br /> Through Property <br />— with the right <br
-					/> Finance Strategy.
-				</h1>
+				<!-- <h1 class="mt-6 text-4xl font-bold leading-tight lg:text-5xl">
+					<span class="inline-flex items-start gap-3">
+						<img
+							src="/img/icon_img_14.png" 
+							alt=""
+							class="mt-1 h-9 w-9 shrink-0"
+						/>
+						<span>
+							Build Wealth <br />
+							Through Property <br />
+							— with the right <br />
+							Finance Strategy.
+						</span>
+					</span>
+				</h1> -->
+				<div class="relative inline-block mt-4 ">
+					<!-- Border Image -->
+					<img
+						src="/img/icon_img_14.png"
+						alt=""
+						class="absolute lg:left-47 left-28 -translate-x-1/2 h-14 w-[250px] lg:h-[75px] lg:w-[420px] -mt-3"
+					/>
+
+					<!-- Heading -->
+					<h1
+						class="text-4xl lg:text-6xl font-extrabold leading-[1.1] text-white"
+					>
+						Build Wealth <br />
+						Through Property <br />
+						— with the right <br />
+						Finance Strategy.
+					</h1>
+				</div>
 			</div>
 
 			<p
 				class="mt-4 max-w-xl
          font-dm-sans font-normal
-         text-[21.74px] leading-[29.13px] tracking-normal
+         text-[20px] leading-[29.13px] tracking-normal
          text-white/80"
 			>
 				Specialised mortgage solutions for Australian property investors
@@ -59,15 +90,15 @@ import Faq from "../components/Faq.astro";
 				of the way.
 			</p>
 
-			<div class="mt-8 flex flex-wrap items-center gap-4">
+			<div class="mt-8 flex flex-wrap items-center gap-6">
 				<a
 					href="/contact"
 					class="inline-flex items-center gap-2
          rounded-full
          bg-white
          border border-[#9CABC3]
-         pl-5 pr-2 py-2
-         font-Poppins font-bold
+         pl-5 pr-2 py-3
+         font-Poppins font-semibold
          text-[15px] leading-[100%] tracking-normal
          text-[#9CABC3]"
 				>
@@ -82,12 +113,14 @@ import Faq from "../components/Faq.astro";
 
 				<a
 					href="tel:+61433967374"
-					class="inline-flex items-center gap-2 text-sm font-semibold text-white/90"
+					class="inline-flex items-center gap-4 text-sm font-semibold text-white/90"
 				>
 					<span
-						class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40"
+						class="inline-flex h-10 w-10 items-center justify-center rounded-full"
 					>
-						&#9742;
+					<img src="/img/phone.png"
+						alt="Call us"
+						class="h-12 w-10 -mt-2">
 					</span>
 					<span
 						class="font-Inter font-normal text-[15.22px] leading-[15.22px] tracking-normal text-white"
@@ -751,7 +784,7 @@ import Faq from "../components/Faq.astro";
 	<Blog />
 
 	<!-- section 9 -->
-	 <Faq />
+	<Faq />
 
 	<Fragment slot="footer">
 		<Footer />
