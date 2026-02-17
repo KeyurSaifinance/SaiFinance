@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-@theme {
- --font-Epilogue: 'Epilogue';
-  --font-Poppins: 'Poppins';
-  --font-Inter: 'Inter';
-  --font-Space-Grotesk: 'Space Grotesk';
-  --font-DM-Sans: 'DM Sans';
-  --font-Arial: 'Arial';
-
-}
 :root {
   --color-primary: #14254a;
   --color-text: #0f172a;
@@ -45,22 +36,22 @@ body {
     color: var(--color-secondary);
   }
   .font-epilogue {
-    font-family: var(--font-Epilogue);
+    font-family: "Epilogue", sans-serif;
   }
   .font-Poppins {
-    font-family: var(--font-Poppins);
+    font-family: "Poppins", sans-serif;
   }
   .font-Inter {
-    font-family: var(--font-Inter);
+    font-family: "Inter", sans-serif;
   }
   .font-space-grotesk {
-    font-family: var(--font-Space-Grotesk);
+    font-family: "Space Grotesk", sans-serif;
   }
   .font-dm-sans {
-    font-family: var(--font-DM-Sans);
+    font-family: "DM Sans", sans-serif;
   }
   .font-Arial {
-    font-family: var(--font-Arial);
+    font-family: "Arial", sans-serif;
   }
 
 }
