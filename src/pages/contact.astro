@@ -1,0 +1,259 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Fragment slot="header">
+        <Header />
+    </Fragment>
+
+    <!-- section 1 -->
+    <section class="bg-[#f6f7fb]">
+        <div class="mx-auto max-w-4xl px-6 py-16 text-center lg:py-24">
+            <h1
+                class="font-Arial font-bold text-[25px] lg:text-[40px] leading-[35px] lg:leading-[48px] tracking-normal text-center bg-[linear-gradient(180deg,#5A72A7_0%,#17284D_100%)] bg-clip-text text-transparent"
+            >
+                Get in Touch
+            </h1>
+
+            <p
+                class="mt-3 font-Arial font-normal text-[16px] leading-[24px] tracking-normal text-center text-[#4A5565]"
+            >
+                We’d love to hear from you. Send us a message and we’ll respond
+                as<br /> soon as possible.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-[#f6f7fb] pb-20">
+        <div class="mx-auto max-w-5xl px-6">
+            <form
+                class="rounded-[24px] border border-[#203A6E] bg-white px-10 py-10 shadow-sm md:px-16 md:py-16"
+            >
+                <div class="grid gap-8 md:grid-cols-2">
+                    <div class="flex flex-col gap-3">
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            class="border-b border-[#D6DBE3] bg-transparent pb-5 font-Arial text-[16px] text-[#99A1AF] outline-none placeholder:text-[#8A93A8]"
+                            placeholder="Your Name"
+                        />
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            class="border-b border-[#D6DBE3] bg-transparent pb-5 font-Arial text-[16px] text-[#99A1AF] outline-none placeholder:text-[#8A93A8]"
+                            placeholder="Email Address"
+                        />
+                    </div>
+                </div>
+
+                <div class="mt-12 flex flex-col gap-3">
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        class="border-b border-[#D6DBE3] bg-transparent pb-5 font-Arial text-[16px] text-[#99A1AF] outline-none placeholder:text-[#8A93A8]"
+                        placeholder="Phone Number"
+                    />
+                </div>
+
+                <div class="mt-8 flex flex-col gap-3">
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        class="border-b border-[#D6DBE3] bg-transparent pb-5 font-Arial text-[16px] text-[#99A1AF] outline-none placeholder:text-[#8A93A8]"
+                        placeholder="Your Message"></textarea>
+                </div>
+
+                <div class="mt-14 flex justify-end">
+                    <button
+                        type="submit"
+                        class="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-3 font-Arial font-normal text-[15px] leading-[28px] tracking-normal text-center text-white"
+                    >
+                        Send Message
+                        <span class="text-[20px]">&#8594;</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- section 3 -->
+    <section class="bg-[#f6f7fb] pb-24">
+        <div class="mx-auto max-w-5xl px-6">
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div
+                    class="rounded-3xl border border-[#edf0f5] bg-white shadow-sm h-[380px]"
+                >
+                    <h3
+                        class="font-Arial font-normal text-[20px] leading-[32px] tracking-normal text-[#1E3A5F] px-8 py-6"
+                    >
+                        Our Location
+                    </h3>
+
+                    <div
+                        class="overflow-hidden rounded-b-2xl border border-[#e6e9ef]"
+                    >
+                        <img
+                            src="/img/Iframe.png"
+                            alt="SAI Finance Location"
+                            class="h-[300px] w-full object-cover"
+                        />
+                    </div>
+                </div>
+
+                <div
+                    class="rounded-3xl border border-[#edf0f5] bg-white shadow-sm"
+                >
+                    <h3
+                        class="font-Arial font-normal text-[20px] leading-[32px] tracking-normal text-[#1E3A5F] px-8 py-6"
+                    >
+                        Contact Information
+                    </h3>
+
+                    <div class="space-y-6 p-6 pb-16">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F9FAFB] text-[#1d2d53]"
+                            >
+                                <svg viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
+                                    <path
+                                        d="M12 3c-3.3 0-6 2.6-6 5.9 0 4.7 6 11.1 6 11.1s6-6.4 6-11.1C18 5.6 15.3 3 12 3z"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                    />
+                                    <circle cx="12" cy="9" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div
+                                    class="font-Arial font-normal text-[18px] leading-[24px] tracking-normal text-[#1E3A5F]"
+                                >
+                                    Address
+                                </div>
+
+                                <div
+                                    class="mt-2 font-Arial font-normal text-[16px] leading-[25px] tracking-normal text-[#14254A]"
+                                >
+                                    123 Main St,<br/>NY 10001<br/>Australia
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F9FAFB] text-[#1d2d53]"
+                            >
+                                <svg viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
+                                    <path
+                                        d="M6 3h4l2 5-2.5 1.5a12 12 0 005.5 5.5L16 12l5 2v4c-8 1-14-5-15-13z"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <div
+                                    class="font-Arial font-normal text-[16px] leading-[24px] tracking-normal text-[#1E3A5F]"
+                                >
+                                    Phone
+                                </div>
+                                <div class="mt-2 font-Arial font-normal text-[16px] leading-[25px] tracking-normal text-[#14254A]">
+                                    +61 433 967 374
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F9FAFB] text-[#1d2d53]"
+                            >
+                                <svg viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
+                                    <path
+                                        d="M4 6h16v12H4z"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M4 7l8 6 8-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <div
+                                    class="font-Arial font-normal text-[16px] leading-[24px] tracking-normal text-[#1E3A5F]"
+                                >
+                                    Email
+                                </div>
+                                <div class="mt-2 font-Arial font-normal text-[16px] leading-[25px] tracking-normal text-[#14254A]">
+                                    keyur@saifinance.com.au
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F9FAFB] text-[#1d2d53]"
+                            >
+                                <svg viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                    />
+                                    <path
+                                        d="M12 7v5l3 2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div>
+                                <div
+                                    class="font-Arial font-normal text-[16px] leading-[24px] tracking-normal text-[#1E3A5F]"
+                                >
+                                    Business Hours
+                                </div>
+                                <div class="mt-2 font-Arial font-normal text-[16px] leading-[20px] tracking-normal text-[#14254A]">
+                                    Mon - Fri: 9:00 AM - 6:00 PM
+                                </div>
+                                <div class="mt-2 font-Arial font-normal text-[16px] leading-[20px] tracking-normal text-[#14254A]">
+                                    Saturday: 10:00 AM - 4:00 PM
+                                </div>
+                                <div class="mt-2 font-Arial font-normal text-[16px] leading-[20px] tracking-normal text-[#14254A]">Sunday: Closed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Fragment slot="footer">
+        <Footer />
+    </Fragment>
+</Layout>
