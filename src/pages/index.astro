@@ -8,6 +8,7 @@ import AboutUs from "../components/AboutUs.astro";
 import Blog from "../components/Blog.astro";
 import Faq from "../components/Faq.astro";
 import LogoSlider from "../components/LogoSlider.astro";
+import CtaButton from "../components/CtaButton.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -92,26 +93,7 @@ import LogoSlider from "../components/LogoSlider.astro";
 			</p>
 
 			<div class="mt-8 flex flex-wrap items-center gap-6">
-				<a
-					href="/contact"
-					class="inline-flex items-center gap-2
-         rounded-full
-         bg-white
-         border border-[#9CABC3]
-         pl-5 pr-2 py-3
-         font-Poppins font-semibold
-         text-[15px] leading-[100%] tracking-normal
-         text-[#9CABC3]"
-				>
-					Book a Free Strategy Call
-					<span
-						class="inline-flex h-8 w-8 items-center justify-center
-           rounded-full bg-[#0f2147] text-white"
-					>
-						&#8599;
-					</span>
-				</a>
-
+				<CtaButton />
 				<a
 					href="tel:+61433967374"
 					class="inline-flex items-center gap-4 text-sm font-semibold text-white/90"

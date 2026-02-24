@@ -7,9 +7,14 @@
 
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: "Epilogue", "Poppins", "Inter", "Space Grotesk", "DM Sans","Arial", sans-serif;
   color: var(--color-text);
+  overflow-y: scroll;
 }
  
 

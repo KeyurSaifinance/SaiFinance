@@ -1,5 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const pathname = Astro.url.pathname;
+const isActive = (path) => pathname === path;
 ---
 
 <header class="border-b border-gray-200 bg-white">
@@ -13,33 +16,48 @@ import { Icon } from "astro-icon/components";
         <nav class="hidden items-center gap-8 lg:flex">
             <a
                 href="/"
-                class="font-Poppins text-[18px] font-medium leading-[28.18px] tracking-normal text-primary hover:opacity-80"
+                class:list={[
+                    "font-Poppins text-[18px] font-medium leading-[28.18px] tracking-normal hover:opacity-80",
+                    isActive("/") ? "text-primary" : "text-[#9CABC3]",
+                ]}
             >
                 Home
             </a>
 
-            <button
-                type="button"
-                class="flex text-[18px] font-medium leading-[28.18px] tracking-normal text-[#9CABC3] hover:text-primary hover:opacity-80 font-Poppins"
+            <a
+                href="/services"
+                class:list={[
+                    "flex text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    isActive("/services") ? "text-primary" : "text-[#9CABC3]",
+                ]}
             >
                 Services
                 <Icon name="ph:caret-down" size="16" class="mt-2 ml-1" />
-            </button>
+            </a>
             <a href="/calculator"
                 type="button"
-                class="flex text-[18px] font-medium leading-[28.18px] tracking-normal text-[#9CABC3] hover:text-primary hover:opacity-80 font-Poppins"
+                class:list={[
+                    "flex text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    isActive("/calculator") ? "text-primary" : "text-[#9CABC3]",
+                ]}
             >
                 Calculators
                 <Icon name="ph:caret-down" size="14" class="mt-2 ml-1" />
             </a>
             <a
                 href="/blog"
-                class="text-[18px] font-medium leading-[28.18px] tracking-normal text-[#9CABC3] hover:text-primary hover:opacity-80 font-Poppins"
+                class:list={[
+                    "text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    isActive("/blog") ? "text-primary" : "text-[#9CABC3]",
+                ]}
                 >Blog</a
             >
             <a
                 href="/resources"
-                class="text-[18px] font-medium leading-[28.18px] tracking-normal text-[#9CABC3] hover:text-primary hover:opacity-80 font-Poppins"
+                class:list={[
+                    "text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    isActive("/resources") ? "text-primary" : "text-[#9CABC3]",
+                ]}
                 >Resources</a
             >
         </nav>

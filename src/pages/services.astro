@@ -1,0 +1,68 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import CtaButton from "../components/CtaButton.astro";
+---
+
+<Layout>
+    <Fragment slot="header">
+        <Header />
+    </Fragment>
+
+    <!-- services hero section 1 -->
+    <section class="relative overflow-hidden bg-[#0f2147] text-white">
+        <img
+            src="/img/services_hero.webp"
+            alt="Our Services"
+            class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+            class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,40,71,0.82)_0%,rgba(30,58,95,0.82)_50%,rgba(45,90,143,0.82)_100%)]"
+        >
+        </div>
+
+        <div class="relative mx-auto max-w-6xl px-6 py-16 lg:py-24 text-center">
+            <div
+                class="mx-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-Arial text-[14px] leading-[20px] tracking-[0px] text-center text-white"
+            >
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"
+                ></span>
+                Trusted by 15,000+ customers
+            </div>
+
+            <h1
+                class="mt-5 font-Arial font-bold text-[58px] leading-[90px] tracking-[0px] text-center"
+            >
+                Flexible Mortgage Solutions
+                <span
+                    class="block font-Arial font-bold text-[58px] leading-[65px] tracking-[0px] bg-gradient-to-r from-[#788FBF] to-[#5A72A7] bg-clip-text text-transparent"
+                >
+                    Tailored to You
+                </span>
+            </h1>
+
+            <p
+                class="mx-auto mt-4 max-w-2xl font-Arial text-[20px] leading-[32.5px] tracking-[0px] text-center text-[#E5E7EB]"
+            >
+                Whether you’re buying your first home, investing, refinancing or
+                growing your business — we structure loans that work for your
+                future.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <CtaButton />
+                <a
+                    href="/services"
+                    class="inline-flex items-center justify-center gap-2
+         rounded-full border border-white/30 bg-white/10
+         px-6 py-2
+         font-Arial font-normal
+         text-[15px] leading-[28px] tracking-[0.5px]
+         text-center text-white
+         hover:bg-white/20"
+                >
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
