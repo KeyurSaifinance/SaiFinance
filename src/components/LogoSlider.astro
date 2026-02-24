@@ -1,0 +1,39 @@
+---
+const logos = Array.from({ length: 13 }, (_, i) => [
+  `/img/logo_${i + 1}.png`,
+  `/img/logo_${i + 1}.jpg`,
+]).flat();
+---
+
+<section class="w-full overflow-hidden bg-white" aria-label="Partner logos">
+  <div class="flex w-max items-center gap-8 pb-14 [animation:logo-scroll_30s_linear_infinite]">
+    {logos.map((src) => (
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        class="h-11 w-auto object-contain max-sm:h-9"
+      />
+    ))}
+    {logos.map((src) => (
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        aria-hidden="true"
+        class="h-11 w-auto object-contain max-sm:h-9"
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  @keyframes logo-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
