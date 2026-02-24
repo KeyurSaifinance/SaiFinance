@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import CtaButton from "../components/CtaButton.astro";
+import Servicess from "../components/Services.astro";
 ---
 
 <Layout>
@@ -21,7 +22,9 @@ import CtaButton from "../components/CtaButton.astro";
         >
         </div>
 
-        <div class="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-24 text-center">
+        <div
+            class="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:py-24 text-center"
+        >
             <div
                 class="mx-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-Arial text-[12px] leading-[18px] tracking-[0px] text-center text-white sm:text-[14px] sm:leading-[20px]"
             >
@@ -63,6 +66,26 @@ import CtaButton from "../components/CtaButton.astro";
                     Learn More
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- services section 2 -->
+    <Servicess />
+
+    <section class="bg-white py-0">
+        <div class="mx-auto max-w-6xl px-6 flex justify-center">
+            <a
+                href="/contact"
+                class="inline-flex items-center justify-center gap-2
+         rounded-full bg-primary
+         px-8 py-3
+         font-Arial font-bold text-[10px]
+         lg:text-[14px] leading-[24px] tracking-[0.5px]
+         text-center text-white
+         w-full sm:w-auto"
+            >
+                Get Started with a Free Consultation &#8594;
+            </a>
         </div>
     </section>
 </Layout>
