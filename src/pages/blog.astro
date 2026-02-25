@@ -1,0 +1,57 @@
+---
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Fragment slot="header">
+        <Header />
+    </Fragment>
+
+    <!-- section 1  -->
+    <section class="relative overflow-hidden bg-[#0f2147] text-white">
+        <img
+            src="/img/services_hero.webp"
+            alt="Our Services"
+            class="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+            class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,40,71,0.82)_0%,rgba(30,58,95,0.82)_50%,rgba(45,90,143,0.82)_100%)]"
+        >
+        </div>
+        <div class="relative max-w-7xl px-6 pt-10 mx-auto">
+            <nav
+                aria-label="Breadcrumb"
+                class="flex items-center gap-3 font-Arial text-[16px] leading-[20px] tracking-[0px] text-white/80"
+            >
+                <a href="/" class="hover:text-white">Home</a>
+                <span class="text-white/50">&#62;</span>
+                <span class="text-white">Blog</span>
+            </nav>
+        </div>
+        <div
+            class="relative mx-auto max-w-6xl px-6 pt-10 lg:py-20 py-10 text-center"
+        >
+            <div
+                class="mx-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-Arial text-[12px] leading-[18px] tracking-[0px] text-center text-white sm:text-[14px] sm:leading-[20px]"
+            >
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"
+                ></span>
+                Trusted by 15,000+ customers
+            </div>
+
+            <h1
+                class="mt-5 font-Arial font-bold text-[32px] leading-[40px] tracking-[0px] text-center sm:text-[42px] sm:leading-[52px] lg:text-[58px] lg:leading-[90px]"
+            >
+                Financial Insights
+            </h1>
+
+            <p
+                class="mx-auto max-w-2xl font-Arial text-[16px] leading-[26px] tracking-[0px] text-center text-[#E5E7EB] sm:text-[18px] sm:leading-[28px] lg:text-[20px] lg:leading-[32.5px]"
+            >
+                Simple finance knowledge, loan guidance, and smart money
+                decisions explained for everyone.
+            </p>
+        </div>
+    </section>
+</Layout>
