@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import BlogPostsSection from "../components/BlogPostsSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -118,7 +119,62 @@ import BlogPostsSection from "../components/BlogPostsSection.astro";
     <BlogPostsSection />
 
     <!-- section 4 -->
+    <section class="bg-white pb-12 lg:pb-20">
+        <div class="mx-auto max-w-6xl px-6">
+            <div
+                class="rounded-[28px] bg-[#16264D] px-6 py-12 text-center text-white shadow-[0_30px_60px_-25px_rgba(15,40,71,0.45)] px-10 lg:px-20 lg:py-20"
+            >
+                <h2
+                    class="font-Arial font-bold
+         lg:text-[40px] text-[25px] lg:leading-[54.62px]
+         tracking-[0px] text-center"
+                >
+                    Make Better Financial Decisions
+                </h2>
+                <p
+                    class="mx-auto font-Arial text-[15px] leading-[26px] text-white/80 lg:text-[16px] sm:leading-[28px]"
+                >
+                    Monthly loan tips, credit score improvement advice, and
+                    smart money strategies — simple and practical.
+                </p>
 
-    
+                <div
+                    class="mt-8 flex flex-wrap items-center justify-center gap-4"
+                >
+                    <div
+                        class="flex w-full max-w-[320px] items-center gap-3 rounded-xl bg-white px-2 lg:px-5 py-2 text-[#1E2E4A] sm:w-auto"
+                    >
+                        <span
+                            class="font-Arial font-normal
+         text-[17px] leading-[31.86px]
+         tracking-[0px] text-center
+         text-[#14254A] block"
+                        >
+                            Enter your business email
+                        </span>
+                        <span class="text-[#1E2E4A]">&#8594;</span>
+                    </div>
+
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center gap-2
+         rounded-xl border border-white/70
+         px-7 py-2
+         font-Arial font-normal
+         text-[17px] leading-[35px]
+         tracking-[0px] text-white
+         text-center
+         hover:bg-white/10 transition-colors duration-200"
+                    >
+                        Get Finance Tips
+                        <span>&#8594;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Fragment slot="footer">
+		<Footer />
+	</Fragment>
 </Layout>
-
