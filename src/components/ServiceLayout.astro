@@ -77,12 +77,14 @@ const {
             aria-label="Breadcrumb"
             class="flex items-center gap-3 font-Arial text-[14px] leading-[20px] text-white/80"
         >
-            {breadcrumb.map((item, index) => (
-                <>
-                    {index > 0 && <span class="text-white/50">&#62;</span>}
-                    <span>{item}</span>
-                </>
-            ))}
+            {
+                breadcrumb.map((item, index) => (
+                    <>
+                        {index > 0 && <span class="text-white/50">&#62;</span>}
+                        <span>{item}</span>
+                    </>
+                ))
+            }
         </nav>
     </div>
 
@@ -90,18 +92,20 @@ const {
         class="relative mx-auto flex max-w-6xl flex-col items-center px-6 pb-16 pt-10 text-center lg:pb-24 lg:pt-14"
     >
         <div
-            class="mx-auto inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 font-Arial text-[12px] leading-[18px] text-white sm:text-[14px]"
+            class="mx-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 font-Arial text-[12px] leading-[18px] tracking-[0px] text-center text-white sm:text-[14px] sm:leading-[20px]"
         >
-            Home Loan Solutions
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"
+            ></span>
+            Trusted by 15,000+ customers
         </div>
 
         <h1
-            class="mt-5 font-Arial text-[28px] font-bold leading-[36px] text-white sm:text-[34px] sm:leading-[44px] lg:text-[42px] lg:leading-[54px]"
+            class="mt-5 font-Arial font-bold text-[32px] leading-[40px] tracking-[0px] text-center sm:text-[42px] sm:leading-[52px] lg:text-[58px] lg:leading-[90px]"
         >
             {heroTitle}
         </h1>
         <p
-            class="mx-auto mt-3 max-w-3xl font-Arial text-[14px] leading-[24px] text-white/80 sm:text-[16px] sm:leading-[26px]"
+            class="mx-auto max-w-2xl font-Arial text-[16px] leading-[26px] tracking-[0px] text-center text-[#E5E7EB] sm:text-[18px] sm:leading-[28px] lg:text-[20px] lg:leading-[32.5px]"
         >
             {heroSubtitle}
         </p>
@@ -109,19 +113,15 @@ const {
         <div class="mt-7 flex flex-wrap items-center justify-center gap-4">
             <a
                 href={heroCtaPrimaryHref}
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-2 font-Arial text-[14px] font-semibold text-[#1E2E4A]"
+                class="inline-flex items-center justify-center gap-2
+  rounded-full bg-white pl-6 pr-3 py-2
+  font-Poppins font-semibold
+  text-[15px] leading-[100%] tracking-normal
+  text-[#1E2E4A]"
             >
                 {heroCtaPrimaryText}
-                <span>&#8594;</span>
+                <span class="text-white bg-primary rounded-full p-2">&#8594;</span>
             </a>
-            {heroCtaSecondaryText ? (
-                <a
-                    href={heroCtaSecondaryHref}
-                    class="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-2 font-Arial text-[14px] font-semibold text-white hover:bg-white/10"
-                >
-                    {heroCtaSecondaryText}
-                </a>
-            ) : null}
         </div>
     </div>
 </section>
@@ -136,29 +136,35 @@ const {
                 >
                     {aboutTitle}
                 </h2>
-                <div class="mt-4 space-y-4 font-Arial text-[14px] leading-[24px] text-[#5B6B86]">
-                    {aboutText.map((para) => (
-                        <p>{para}</p>
-                    ))}
+                <div
+                    class="mt-4 space-y-4 font-Arial text-[14px] leading-[24px] text-[#5B6B86]"
+                >
+                    {aboutText.map((para) => <p>{para}</p>)}
                 </div>
 
                 <div class="mt-6">
                     <h3 class="font-Arial text-[14px] font-bold text-[#1E2E4A]">
                         Key Benefits
                     </h3>
-                    <ul class="mt-3 space-y-2 font-Arial text-[14px] text-[#5B6B86]">
-                        {benefits.map((item) => (
-                            <li class="flex items-start gap-2">
-                                <span class="mt-2 h-2 w-2 rounded-full bg-[#1E2E4A]"></span>
-                                <span>{item}</span>
-                            </li>
-                        ))}
+                    <ul
+                        class="mt-3 space-y-2 font-Arial text-[14px] text-[#5B6B86]"
+                    >
+                        {
+                            benefits.map((item) => (
+                                <li class="flex items-start gap-2">
+                                    <span class="mt-2 h-2 w-2 rounded-full bg-[#1E2E4A]" />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>
 
             <div>
-                <div class="overflow-hidden rounded-[18px] bg-white shadow-[0_20px_40px_-25px_rgba(15,40,71,0.5)]">
+                <div
+                    class="overflow-hidden rounded-[18px] bg-white shadow-[0_20px_40px_-25px_rgba(15,40,71,0.5)]"
+                >
                     <img
                         src={aboutImage}
                         alt={aboutTitle}
@@ -174,16 +180,18 @@ const {
                         Use our tools to plan your home loan journey.
                     </p>
                     <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                        {calculators.map((item) => (
-                            <div class="rounded-[12px] bg-white p-3 shadow-[0_10px_20px_-15px_rgba(15,40,71,0.45)]">
-                                <p class="font-Arial text-[12px] font-bold text-[#1E2E4A]">
-                                    {item.title}
-                                </p>
-                                <p class="mt-1 text-[11px] text-[#6B7A93]">
-                                    {item.description}
-                                </p>
-                            </div>
-                        ))}
+                        {
+                            calculators.map((item) => (
+                                <div class="rounded-[12px] bg-white p-3 shadow-[0_10px_20px_-15px_rgba(15,40,71,0.45)]">
+                                    <p class="font-Arial text-[12px] font-bold text-[#1E2E4A]">
+                                        {item.title}
+                                    </p>
+                                    <p class="mt-1 text-[11px] text-[#6B7A93]">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
@@ -195,27 +203,33 @@ const {
 <section class="bg-[#F6F8FC] py-12 lg:py-20">
     <div class="mx-auto max-w-6xl px-6">
         <div class="text-center">
-            <h2 class="font-Arial text-[22px] font-bold text-[#1E2E4A] lg:text-[28px]">
+            <h2
+                class="font-Arial text-[22px] font-bold text-[#1E2E4A] lg:text-[28px]"
+            >
                 {servicesTitle}
             </h2>
-            {servicesSubtitle ? (
-                <p class="mx-auto mt-2 max-w-2xl text-[14px] text-[#6B7A93]">
-                    {servicesSubtitle}
-                </p>
-            ) : null}
+            {
+                servicesSubtitle ? (
+                    <p class="mx-auto mt-2 max-w-2xl text-[14px] text-[#6B7A93]">
+                        {servicesSubtitle}
+                    </p>
+                ) : null
+            }
         </div>
 
         <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            {services.map((item) => (
-                <div class="rounded-[14px] bg-white p-5 shadow-[0_14px_30px_-20px_rgba(15,40,71,0.45)]">
-                    <h3 class="font-Arial text-[14px] font-bold text-[#1E2E4A]">
-                        {item.title}
-                    </h3>
-                    <p class="mt-2 text-[12px] leading-[20px] text-[#6B7A93]">
-                        {item.description}
-                    </p>
-                </div>
-            ))}
+            {
+                services.map((item) => (
+                    <div class="rounded-[14px] bg-white p-5 shadow-[0_14px_30px_-20px_rgba(15,40,71,0.45)]">
+                        <h3 class="font-Arial text-[14px] font-bold text-[#1E2E4A]">
+                            {item.title}
+                        </h3>
+                        <p class="mt-2 text-[12px] leading-[20px] text-[#6B7A93]">
+                            {item.description}
+                        </p>
+                    </div>
+                ))
+            }
         </div>
     </div>
 </section>
@@ -223,15 +237,19 @@ const {
 <!-- CTA -->
 <section class="bg-white py-12 lg:py-20">
     <div class="mx-auto max-w-6xl px-6">
-        <div class="rounded-[22px] bg-[#16264D] px-6 py-10 text-center text-white shadow-[0_24px_50px_-30px_rgba(15,40,71,0.6)]">
+        <div
+            class="rounded-[22px] bg-[#16264D] px-6 py-10 text-center text-white shadow-[0_24px_50px_-30px_rgba(15,40,71,0.6)]"
+        >
             <h2 class="font-Arial text-[20px] font-bold lg:text-[26px]">
                 {ctaTitle}
             </h2>
-            {ctaSubtitle ? (
-                <p class="mx-auto mt-2 max-w-2xl text-[13px] text-white/80">
-                    {ctaSubtitle}
-                </p>
-            ) : null}
+            {
+                ctaSubtitle ? (
+                    <p class="mx-auto mt-2 max-w-2xl text-[13px] text-white/80">
+                        {ctaSubtitle}
+                    </p>
+                ) : null
+            }
             <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <a
                     href={ctaPrimaryHref}
@@ -239,14 +257,16 @@ const {
                 >
                     {ctaPrimaryText}
                 </a>
-                {ctaSecondaryText ? (
-                    <a
-                        href={ctaSecondaryHref}
-                        class="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-2 font-Arial text-[13px] font-semibold text-white hover:bg-white/10"
-                    >
-                        {ctaSecondaryText}
-                    </a>
-                ) : null}
+                {
+                    ctaSecondaryText ? (
+                        <a
+                            href={ctaSecondaryHref}
+                            class="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-2 font-Arial text-[13px] font-semibold text-white hover:bg-white/10"
+                        >
+                            {ctaSecondaryText}
+                        </a>
+                    ) : null
+                }
             </div>
         </div>
     </div>
