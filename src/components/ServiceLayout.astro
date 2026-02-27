@@ -120,7 +120,9 @@ const {
   text-[#1E2E4A]"
             >
                 {heroCtaPrimaryText}
-                <span class="text-white bg-primary rounded-full p-2">&#8594;</span>
+                <span class="text-white bg-primary rounded-full p-2"
+                    >&#8594;</span
+                >
             </a>
         </div>
     </div>
@@ -132,18 +134,29 @@ const {
         <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div>
                 <h2
-                    class="font-Arial text-[22px] font-bold leading-[32px] text-[#1E2E4A] lg:text-[26px]"
+                    class="font-Arial font-bold
+  lg:text-[40px] text-[30px] leading-[55.03px]
+  tracking-normal
+  text-[#1E3A5F]"
                 >
                     {aboutTitle}
                 </h2>
                 <div
-                    class="mt-4 space-y-4 font-Arial text-[14px] leading-[24px] text-[#5B6B86]"
+                    class="mt-6 space-y-6
+  font-Arial font-normal
+  text-[20px] leading-[33px]
+  tracking-normal
+  text-[#364153]"
                 >
                     {aboutText.map((para) => <p>{para}</p>)}
                 </div>
-
                 <div class="mt-6">
-                    <h3 class="font-Arial text-[14px] font-bold text-[#1E2E4A]">
+                    <h3
+                        class="font-['Arial'] font-bold
+  text-[30px] leading-[44.03px]
+  tracking-normal
+  text-[#1E3A5F]"
+                    >
                         Key Benefits
                     </h3>
                     <ul
@@ -163,13 +176,23 @@ const {
 
             <div>
                 <div
-                    class="overflow-hidden rounded-[18px] bg-white shadow-[0_20px_40px_-25px_rgba(15,40,71,0.5)]"
+                    class="overflow-hidden rounded-[18px] shadow-[0_20px_40px_-25px_rgba(15,40,71,0.5)]"
                 >
-                    <img
-                        src={aboutImage}
-                        alt={aboutTitle}
-                        class="h-full w-full object-cover"
-                    />
+                    <div class="relative h-[490px] w-full">
+                        <!-- Image -->
+                        <img
+                            src={aboutImage}
+                            alt={aboutTitle}
+                            class="absolute inset-0 h-full w-full object-cover"
+                        />
+
+                        <!-- Gradient Overlay -->
+                        <div
+                            class="absolute inset-0 z-10
+      bg-[linear-gradient(223.9deg,rgba(23,40,77,0.98)_5.93%,rgba(90,114,167,0.22)_98.8%)]"
+                        >
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mt-6 rounded-[16px] bg-[#F5F7FB] p-5">
