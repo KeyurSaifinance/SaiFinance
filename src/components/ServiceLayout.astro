@@ -212,7 +212,7 @@ const {
                     </div>
                 </div>
 
-                <div class="mt-14 rounded-[16px] bg-[#EEF2F7] p-5">
+                <div class="mt-14 rounded-[16px] bg-[#EEF2F7] px-5 py-10">
                     <h4
                         class="text-center font-Arial text-[28px] font-bold leading-[40px] text-[#1E3A5F]"
                     >
@@ -227,9 +227,7 @@ const {
                     <div class="mt-5 grid gap-4 sm:grid-cols-2">
                         {
                             calculators.map((item) => (
-                                <div
-                                    class="rounded-[14px] bg-white p-4 shadow-[0px_1.21px_2.42px_-1.21px_rgba(0,0,0,0.10),0px_2.42px_3.63px_-0.61px_rgba(0,0,0,0.10) ring-1 ring-black/5"
-                                >
+                                <div class="rounded-[14px] bg-white p-4 shadow-[0px_1.21px_2.42px_-1.21px_rgba(0,0,0,0.10),0px_2.42px_3.63px_-0.61px_rgba(0,0,0,0.10) ring-1 ring-black/5">
                                     <div class="flex items-start gap-3">
                                         <span
                                             class="mt-0.5 p-1 inline-flex h-6 w-8 items-center justify-center rounded-[5px] bg-[#1E3A5F] text-white shadow-[0_6px_16px_-8px_rgba(30,58,95,0.8)]"
@@ -272,34 +270,32 @@ const {
 <section class="bg-[#F6F8FC] py-12 lg:py-20">
     <div class="mx-auto max-w-6xl px-6">
         <div class="text-center">
-            <h2
-                class="font-Arial text-[22px] font-bold text-[#1E2E4A] lg:text-[28px]"
-            >
+            <h2 class="font-Arial text-[30px] font-bold text-[#1E2E4A] lg:text-[40px] lg:leading-[48px]">
                 {servicesTitle}
             </h2>
             {
                 servicesSubtitle ? (
-                    <p class="mx-auto mt-2 max-w-2xl text-[14px] text-[#6B7A93]">
+                    <p class="mx-auto mt-3 max-w-2xl font-Arial text-[15px] leading-[24px] text-[#6B7A93]">
                         {servicesSubtitle}
                     </p>
                 ) : null
             }
         </div>
 
-        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+        <div class="mt-8 grid gap-5 sm:grid-cols-2">
             {
                 services.map((item) => (
-                    <div class="rounded-[14px] bg-white p-5 shadow-[0_14px_30px_-20px_rgba(15,40,71,0.45)]">
-                        <h3 class="font-Arial text-[14px] font-bold text-[#1E2E4A]">
+                    <div class="rounded-[16px] bg-white p-6 shadow-[0_18px_40px_-28px_rgba(15,40,71,0.5)] ring-1 ring-black/5">
+                        <h3 class="font-Arial text-[16px] font-bold text-[#1E2E4A]">
                             {item.title}
                         </h3>
-                        <p class="mt-2 text-[12px] leading-[20px] text-[#6B7A93]">
+                        <p class="mt-2 text-[13px] leading-[22px] text-[#6B7A93]">
                             {item.description}
                         </p>
                     </div>
                 ))
             }
-        </div>
+        </>
     </div>
 </section>
 
