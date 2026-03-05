@@ -2,6 +2,8 @@
 export interface ServiceCard {
     title: string;
     description: string;
+    icon?: string;
+    iconAlt?: string;
 }
 
 export interface CalculatorCard {
@@ -270,7 +272,9 @@ const {
 <section class="bg-[#F6F8FC] py-12 lg:py-20">
     <div class="mx-auto max-w-6xl px-6">
         <div class="text-center">
-            <h2 class="font-Arial text-[30px] font-bold text-[#1E2E4A] lg:text-[40px] lg:leading-[48px]">
+            <h2
+                class="font-Arial text-[30px] font-bold text-[#1E2E4A] lg:text-[40px] lg:leading-[48px]"
+            >
                 {servicesTitle}
             </h2>
             {
@@ -286,16 +290,37 @@ const {
             {
                 services.map((item) => (
                     <div class="rounded-[16px] bg-white p-6 shadow-[0_18px_40px_-28px_rgba(15,40,71,0.5)] ring-1 ring-black/5">
-                        <h3 class="font-Arial text-[16px] font-bold text-[#1E2E4A]">
-                            {item.title}
-                        </h3>
-                        <p class="mt-2 text-[13px] leading-[22px] text-[#6B7A93]">
-                            {item.description}
-                        </p>
+                        <div class="flex items-start gap-4">
+                            <span class="mt-1 inline-flex items-center justify-center">
+                                {item.icon ? (
+                                    <img
+                                        src={item.icon}
+                                        alt={item.iconAlt ?? item.title}
+                                        class="h-12 w-14"
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <span
+                                        class="block h-2.5 w-2.5 rounded-full bg-white/80"
+                                        aria-hidden="true"
+                                    />
+                                )}
+                            </span>
+                            <div>
+                                <h3
+                                    class="font-Arial font-bold text-[18px] leading-[30px] tracking-normal text-[#1E3A5F]"
+                                >
+                                    {item.title}
+                                </h3>
+                                <p class="mt-2 text-[13px] leading-[22px] text-[#6B7A93]">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
-        </>
+        </div>
     </div>
 </section>
 
