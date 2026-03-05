@@ -61,17 +61,17 @@ import CtaButton from "../components/CtaButton.astro";
 						</span>
 					</span>
 				</h1> -->
-				<div class="relative inline-block mt-4 ">
+				<div class="relative inline-block mt-4">
 					<!-- Border Image -->
 					<img
 						src="/img/icon_img_14.png"
 						alt=""
-						class="absolute lg:left-47 left-28 -translate-x-1/2 h-14 w-[250px] lg:h-[75px] lg:w-[420px] -mt-3"
+						class="absolute lg:left-49 left-28 -translate-x-1/2 h-14 w-[250px] lg:h-[75px] lg:w-[420px] -mt-1"
 					/>
 
 					<!-- Heading -->
 					<h1
-						class="text-4xl lg:text-6xl font-extrabold leading-[1.1] text-white"
+						class="text-4xl font-Poppins lg:text-6xl font-extrabold leading-[1.1] text-white"
 					>
 						Build Wealth <br />
 						Through Property <br />
@@ -101,9 +101,11 @@ import CtaButton from "../components/CtaButton.astro";
 					<span
 						class="inline-flex h-10 w-10 items-center justify-center rounded-full"
 					>
-					<img src="/img/phone.png"
-						alt="Call us"
-						class="h-12 w-10 -mt-2">
+						<img
+							src="/img/phone.png"
+							alt="Call us"
+							class="h-12 w-10 -mt-2"
+						/>
 					</span>
 					<span
 						class="font-Inter font-normal text-[15.22px] leading-[15.22px] tracking-normal text-white"
@@ -143,7 +145,9 @@ import CtaButton from "../components/CtaButton.astro";
 			<div class="grid lg:grid-cols-2 lg:gap-12 gap-5">
 				<!-- LEFT SIDE -->
 				<div class="flex flex-col">
-					<div class="flex lg:flex-row flex-col gap-5 lg:gap-10 lg:ml-20">
+					<div
+						class="flex lg:flex-row flex-col gap-5 lg:gap-10 lg:ml-20"
+					>
 						<!-- Badge -->
 						<div>
 							<span
@@ -188,7 +192,9 @@ import CtaButton from "../components/CtaButton.astro";
 				</div>
 
 				<!-- RIGHT SIDE VALUES -->
-				<div class="grid gap-y-8 lg:gap-y-4 gap-x-8 lg:grid-cols-2 grid-cols-1">
+				<div
+					class="grid gap-y-8 lg:gap-y-4 gap-x-8 lg:grid-cols-2 grid-cols-1"
+				>
 					<!-- Item -->
 					<div class="flex flex-col items-start gap-4">
 						<div>
@@ -331,7 +337,7 @@ import CtaButton from "../components/CtaButton.astro";
 	</section>
 
 	<!-- section 4 -->
-	 <LogoSlider/>
+	<LogoSlider />
 
 	<!-- section 4 -->
 	<section class="bg-[#f6f7fb] pt-18 pb-10">
@@ -362,9 +368,7 @@ import CtaButton from "../components/CtaButton.astro";
 			</div>
 
 			<div class="relative mt-5 lg:mt-12">
-				<div
-					class="absolute left-12 right-12 top-14 hidden lg:block"
-				>
+				<div class="absolute left-12 right-12 top-14 hidden lg:block">
 				</div>
 
 				<div class="grid gap-10 lg:grid-cols-5">
@@ -543,9 +547,10 @@ import CtaButton from "../components/CtaButton.astro";
 				class="font-dm-sans font-normal text-[17px] leading-[28px] tracking-normal text-center mt-10"
 			>
 				We’ll contact you within one business day.
-				<span
+				<a
+					href="/contact"
 					class="font-dm-sans font-medium text-[17px] leading-[26.05px] text-center"
-					>Get Free Quote</span
+					>Get Free Quote</a
 				>
 			</h1>
 		</div>
