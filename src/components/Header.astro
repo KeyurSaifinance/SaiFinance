@@ -17,8 +17,9 @@ const isActive = (path) => pathname === path;
             <a
                 href="/"
                 class:list={[
-                    "font-Poppins text-[18px] font-medium leading-[28.18px] tracking-normal hover:opacity-80",
+                    "font-Poppins text-[17px] leading-[28.18px] tracking-normal hover:opacity-80",
                     isActive("/") ? "text-primary" : "text-[#9CABC3]",
+                    isActive("/") ? "font-bold" : "font-medium",
                 ]}
             >
                 Home
@@ -28,8 +29,9 @@ const isActive = (path) => pathname === path;
                 <a
                     href="/services"
                     class:list={[
-                        "flex items-center text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                        "flex items-center text-[17px]  leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
                         isActive("/services") ? "text-primary" : "text-[#9CABC3]",
+                        isActive("/services") ? "font-bold" : "font-medium",
                     ]}
                 >
                     Services
@@ -83,8 +85,9 @@ const isActive = (path) => pathname === path;
             <a href="/calculator"
                 type="button"
                 class:list={[
-                    "flex text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    "flex text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
                     isActive("/calculator") ? "text-primary" : "text-[#9CABC3]",
+                    isActive("/calculator") ? "font-bold" : "font-medium",
                 ]}
             >
                 Calculators
@@ -93,16 +96,18 @@ const isActive = (path) => pathname === path;
             <a
                 href="/blog"
                 class:list={[
-                    "text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    "text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
                     isActive("/blog") ? "text-primary" : "text-[#9CABC3]",
+                    isActive("/blog") ? "font-bold" : "font-medium",
                 ]}
                 >Blog</a
             >
             <a
                 href="/resources"
                 class:list={[
-                    "text-[18px] font-medium leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
+                    "text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins",
                     isActive("/resources") ? "text-primary" : "text-[#9CABC3]",
+                    isActive("/resources") ? "font-bold" : "font-medium",
                 ]}
                 >Resources</a
             >
