@@ -28,6 +28,10 @@ export interface Props {
     servicesTitle: string;
     servicesSubtitle?: string;
     services: ServiceCard[];
+    servicesCtaTitle?: string;
+    servicesCtaSubtitle?: string;
+    servicesCtaPrimaryText?: string;
+    servicesCtaPrimaryHref?: string;
     ctaTitle: string;
     ctaSubtitle?: string;
     ctaPrimaryText: string;
@@ -53,6 +57,10 @@ const {
     servicesTitle,
     servicesSubtitle,
     services,
+    servicesCtaTitle = "Ready to explore your loan options?",
+    servicesCtaSubtitle = "Our mortgage specialists are here to help you find the perfect loan solution",
+    servicesCtaPrimaryText = "Get Expert Advice Today",
+    servicesCtaPrimaryHref = "/contact",
     ctaTitle,
     ctaSubtitle,
     ctaPrimaryText,
@@ -269,7 +277,7 @@ const {
 </section>
 
 <!-- Services -->
-<section class="bg-[#F6F8FC] py-12 lg:py-20">
+<section class="bg-[#F6F8FC] py-12 lg:py-12">
     <div class="mx-auto max-w-6xl px-6">
         <div class="text-center">
             <h2
@@ -296,7 +304,7 @@ const {
                                     <img
                                         src={item.icon}
                                         alt={item.iconAlt ?? item.title}
-                                        class="h-12 w-14"
+                                        class="h-12 w-16"
                                         loading="lazy"
                                     />
                                 ) : (
@@ -307,9 +315,7 @@ const {
                                 )}
                             </span>
                             <div>
-                                <h3
-                                    class="font-Arial font-bold text-[18px] leading-[30px] tracking-normal text-[#1E3A5F]"
-                                >
+                                <h3 class="font-Arial font-bold text-[18px] leading-[30px] tracking-normal text-[#1E3A5F]">
                                     {item.title}
                                 </h3>
                                 <p class="mt-2 text-[13px] leading-[22px] text-[#6B7A93]">
@@ -321,6 +327,33 @@ const {
                 ))
             }
         </div>
+        <div class="mt-12 text-center">
+            <h3
+                class="font-Arial lg:text-[20px] text-[14px] leading-[34px] font-bold text-center text-[#14254A]"
+            >
+                {servicesCtaTitle}
+            </h3>
+            <div class="mt-4 flex items-center justify-center">
+                <a
+                    href={servicesCtaPrimaryHref}
+                    class="inline-flex items-center justify-center gap-2 rounded-full
+        bg-gradient-to-b from-[#17284D] to-[#5A72A7]
+        px-8 py-3 font-Poppins text-[14px] leading-[27.5px] font-semibold
+        text-white text-center
+        shadow-[0_10px_24px_-12px_rgba(30,46,74,0.9)]"
+                >
+                    {servicesCtaPrimaryText}
+                    <span class="text-[16px]" aria-hidden="true">&#8594;</span>
+                </a>
+            </div>
+            {
+                servicesCtaSubtitle ? (
+                    <p class="mx-auto mt-5 max-w-2xl font-Arial lg:text-[15px] text-[13px] leading-[22px] font-normal text-center text-[#364153]">
+                        {servicesCtaSubtitle}
+                    </p>
+                ) : null
+            }
+        </div>
     </div>
 </section>
 
@@ -328,30 +361,31 @@ const {
 <section class="bg-white py-12 lg:py-20">
     <div class="mx-auto max-w-6xl px-6">
         <div
-            class="rounded-[22px] bg-[#16264D] px-6 py-10 text-center text-white shadow-[0_24px_50px_-30px_rgba(15,40,71,0.6)]"
+            class="rounded-[20px] bg-[#142449] px-6 py-10 text-center text-white shadow-[0_30px_60px_-35px_rgba(6,24,51,0.8)] lg:px-16 lg:py-25"
         >
-            <h2 class="font-Arial text-[20px] font-bold lg:text-[26px]">
+            <h2 class="font-Arial text-[22px] font-bold leading-[30px] lg:text-[43px] lg:leading-[44px]">
                 {ctaTitle}
             </h2>
             {
                 ctaSubtitle ? (
-                    <p class="mx-auto mt-2 max-w-2xl text-[13px] text-white/80">
+                    <p class="mx-auto mt-5 max-w-2xl font-Arial text-[18px] leading-[26px] text-white/80">
                         {ctaSubtitle}
                     </p>
                 ) : null
             }
-            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
                 <a
                     href={ctaPrimaryHref}
-                    class="inline-flex items-center justify-center rounded-full bg-white px-6 py-2 font-Arial text-[13px] font-semibold text-[#1E2E4A]"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-white lg:px-6 lg:py-4 py-2 px-4 font-Arial lg:text-[17px] text-[13px] text-[#1E2E4A] shadow-[0_10px_24px_-12px_rgba(0,0,0,0.35)]"
                 >
                     {ctaPrimaryText}
+                    <span class="text-[14px]" aria-hidden="true">&#8594;</span>
                 </a>
                 {
                     ctaSecondaryText ? (
                         <a
                             href={ctaSecondaryHref}
-                            class="inline-flex items-center justify-center rounded-full border border-white/70 px-6 py-2 font-Arial text-[13px] font-semibold text-white hover:bg-white/10"
+                            class="inline-flex items-center justify-center rounded-full border border-white/50 bg-white/5 lg:px-6 lg:py-4 py-2 px-4 font-Arial lg:text-[17px] text-[13px] text-white hover:bg-white/10"
                         >
                             {ctaSecondaryText}
                         </a>
