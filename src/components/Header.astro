@@ -1,8 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const pathname = Astro.url.pathname;
-const isActive = (path) => pathname === path;
+const pathname = Astro.url.pathname || "/";
+const normalizePath = (path) => path.replace(/\/+$/, "") || "/";
+const isActive = (path) => {
+    const current = normalizePath(pathname);
+    const target = normalizePath(path);
+    if (target === "/") return current === "/";
+    return current === target || current.startsWith(`${target}/`);
+};
 ---
 
 <header class="border-b border-gray-200 bg-white">
