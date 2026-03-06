@@ -299,12 +299,14 @@ const {
                 services.map((item) => (
                     <div class="rounded-[16px] bg-white p-6 shadow-[0_18px_40px_-28px_rgba(15,40,71,0.5)] ring-1 ring-black/5">
                         <div class="flex items-start gap-4">
-                            <span class="mt-1 inline-flex items-center justify-center">
+                            <span
+                                class="mt-1 inline-flex items-center justify-center h-12 w-16 rounded-xl bg-primary shadow-[0_8px_10px_-6px_#0000001A,0_20px_25px_-5px_#0000001A] text-white"
+                            >
                                 {item.icon ? (
                                     <img
                                         src={item.icon}
                                         alt={item.iconAlt ?? item.title}
-                                        class="h-12 w-16"
+                                        class="h-5 w-5"
                                         loading="lazy"
                                     />
                                 ) : (
@@ -363,7 +365,9 @@ const {
         <div
             class="rounded-[20px] bg-[#142449] px-6 py-10 text-center text-white shadow-[0_30px_60px_-35px_rgba(6,24,51,0.8)] lg:px-16 lg:py-25"
         >
-            <h2 class="font-Arial text-[22px] font-bold leading-[30px] lg:text-[43px] lg:leading-[44px]">
+            <h2
+                class="font-Arial text-[22px] font-bold leading-[30px] lg:text-[43px] lg:leading-[44px]"
+            >
                 {ctaTitle}
             </h2>
             {
