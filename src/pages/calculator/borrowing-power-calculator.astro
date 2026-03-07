@@ -4,6 +4,12 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 ---
 
+<!-- ---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
 <Layout title="Loan Repayment Calculator | SAI Finance">
     <Fragment slot="header">
         <Header />
@@ -16,7 +22,163 @@ import Footer from "../../components/Footer.astro";
             src="https://www.visionabacus.net/Tools/B3/SuiteA/A200/Borrowing_Power_Calculator/FBAA"
             frameborder="0"
             scrolling="no"></iframe>
-        <!-- </div> -->
+
+    </section>
+
+    <Fragment slot="footer">
+        <Footer />
+    </Fragment>
+</Layout> -->
+<Layout title="Loan Repayment Calculator | SAI Finance">
+    <Fragment slot="header">
+        <Header />
+    </Fragment>
+    <section class="bg-gray-100 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Your details -->
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold text-[#0B4A6F] mb-6">
+                        Your details
+                    </h2>
+
+                    <label class="text-sm text-gray-600">Application type</label
+                    >
+
+                    <div class="flex gap-3 mt-2 mb-6">
+                        <button
+                            class="bg-[#0B4A6F] text-white px-6 py-2 rounded"
+                        >
+                            Single
+                        </button>
+
+                        <button class="border px-6 py-2 rounded">
+                            Joint
+                        </button>
+                    </div>
+
+                    <label class="text-sm text-gray-600">
+                        Number of dependants
+                    </label>
+
+                    <select class="w-full border rounded p-3 mt-2 mb-6">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+
+                    <label class="text-sm text-gray-600">
+                        Property you would like to buy
+                    </label>
+
+                    <div class="flex gap-3 mt-2">
+                        <button
+                            class="bg-[#0B4A6F] text-white px-4 py-2 rounded"
+                        >
+                            Home to live in
+                        </button>
+
+                        <button class="border px-4 py-2 rounded">
+                            Residential investment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Earnings -->
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold text-[#0B4A6F] mb-6">
+                        Your earnings
+                    </h2>
+
+                    <label class="text-sm text-gray-600">
+                        Your annual income (before tax)
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2 mb-6"
+                    />
+
+                    <label class="text-sm text-gray-600">
+                        Your annual other income (optional)
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2"
+                    />
+                </div>
+
+                <!-- Expenses -->
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-semibold text-[#0B4A6F] mb-6">
+                        Your expenses
+                    </h2>
+
+                    <label class="text-sm text-gray-600">
+                        Monthly living expenses
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2 mb-4"
+                    />
+
+                    <label class="text-sm text-gray-600">
+                        Current home loan monthly repayments
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2 mb-4"
+                    />
+
+                    <label class="text-sm text-gray-600">
+                        Other loan monthly repayments
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2 mb-4"
+                    />
+
+                    <label class="text-sm text-gray-600">
+                        Other monthly commitments
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2 mb-4"
+                    />
+
+                    <label class="text-sm text-gray-600">
+                        Total credit card limits
+                    </label>
+
+                    <input
+                        type="number"
+                        placeholder="$0"
+                        class="w-full border rounded p-3 mt-2"
+                    />
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="flex justify-center mt-10">
+                <button
+                    class="bg-[#1672A1] text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-[#125b7e]"
+                >
+                    Work out how much I could borrow
+                </button>
+            </div>
+        </div>
     </section>
 
     <Fragment slot="footer">

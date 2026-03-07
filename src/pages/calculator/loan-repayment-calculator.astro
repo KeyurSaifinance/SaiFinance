@@ -4,42 +4,565 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 ---
 
+<!-- ---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+---
+
 <Layout title="Loan Repayment Calculator | SAI Finance">
     <Fragment slot="header">
         <Header />
     </Fragment>
 
     <section class="mx-auto max-w-7xl px-6 py-10 font-dm-sans">
-        <!-- <h1 class="font-dm-sans text-[32px] font-semibold text-[#0f2147]">
-            Loan Repayment Calculator
-        </h1>
-        <p class="mt-2 font-dm-sans text-[16px] text-[#4A5565]">
-            If the calculator does not load, open it in a new tab.
-            <a
-                class="ml-1 underline"
-                href="https://www.visionabacus.net/Tools/B3/SuiteA/G100/Loan_Repayment_Calculator/FBAA"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Open calculator
-            </a>
-        </p> -->
-
-        <!-- <div
-            class="mt-6 overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white"
-        > -->
         <iframe
             class="VisiCalcClass"
             id="Loan_Repayment_Calculator"
             src="https://www.visionabacus.net/Tools/B3/SuiteA/G100/Loan_Repayment_Calculator/FBAA"
             frameborder="0"
             scrolling="no"></iframe>
-
-       
-        <!-- </div> -->
     </section>
 
     <Fragment slot="footer">
         <Footer />
     </Fragment>
+</Layout> -->
+<Layout title="Loan Repayment Calculator | SAI Finance">
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <section class="bg-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="mb-10 font-bold text-[30px] lg:text-[30px] leading-[48px] tracking-normal text-primary bg-clip-text">Home loan repayment calculator </h1>
+      <div class="grid lg:grid-cols-2 gap-10">
+        <!-- LEFT FORM -->
+        <div class="bg-white p-8 rounded-lg shadow">
+          <label class="text-sm text-gray-600">Property type</label>
+
+          <div class="flex gap-3 mt-2 mb-6">
+            <button class="bg-primary text-white px-6 py-2 rounded">
+              Owner occupier
+            </button>
+            <button class="border px-6 py-2 rounded">
+              Residential investment
+            </button>
+          </div>
+
+          <label class="text-sm text-gray-600">Loan amount</label>
+
+          <input
+            id="loan"
+            type="number"
+            value="500000"
+            class="w-full border rounded p-3 mt-2 mb-6"
+          />
+
+          <label class="text-sm text-gray-600"> Variable or fixed rate </label>
+
+          <div class="flex gap-3 mt-2 mb-6">
+            <button
+              id="rateTypeVariable"
+              class="bg-primary text-white px-6 py-2 rounded"
+              type="button"
+            >
+              Variable
+            </button>
+            <button
+              id="rateTypeFixed"
+              class="border px-6 py-2 rounded"
+              type="button"
+            >
+              Fixed
+            </button>
+          </div>
+
+          <label class="text-sm text-gray-600">Payment type</label>
+
+          <select
+            id="paymentType"
+            class="w-full border rounded p-3 mt-2 mb-6"
+          ></select>
+
+          <label class="text-sm text-gray-600">Interest rate</label>
+
+          <select id="rate" class="w-full border rounded p-3 mt-2"></select>
+          <div class="text-sm text-gray-600 mt-2 mb-6">
+            Comparison rate: <span id="comparisonRate">-%</span>
+          </div>
+
+          <label class="text-sm text-gray-600"> Loan period in years </label>
+
+          <select id="years" class="w-full border rounded p-3 mt-2 mb-6"></select>
+
+          <button
+            id="calculateBtn"
+            class="w-full bg-primary text-white py-3 rounded font-semibold"
+          >
+            Calculate my payments
+          </button>
+        </div>
+
+        <!-- RIGHT RESULT -->
+        <div class="bg-white p-8 rounded-lg shadow">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-semibold text-primary">
+              Your estimated repayments
+            </h2>
+
+            <select id="frequency" class="border rounded px-3 py-2">
+              <option>Monthly</option>
+              <option>Fortnightly</option>
+              <option>Weekly</option>
+            </select>
+          </div>
+
+          <h3 class="text-5xl font-bold text-primary mb-8">
+            $<span id="result">0</span>
+          </h3>
+
+          <div id="ioMessage" class="text-gray-700 mb-6 hidden"></div>
+
+          <div class="space-y-4 text-gray-600">
+            <div class="flex justify-between border-b pb-2">
+              <span>Interest rate</span>
+              <span id="showRate">-%</span>
+            </div>
+
+            <div class="flex justify-between border-b pb-2">
+              <span>Comparison rate</span>
+              <span id="showComparisonRate">-%</span>
+            </div>
+
+            <div class="flex justify-between border-b pb-2">
+              <span>Interest rate type</span>
+              <span id="showRateType">Variable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("calculateBtn");
+      const paymentTypeSelect = document.getElementById("paymentType");
+      const rateSelect = document.getElementById("rate");
+      const yearsSelect = document.getElementById("years");
+      const frequencySelect = document.getElementById("frequency");
+      const comparisonRateEl = document.getElementById("comparisonRate");
+      const showComparisonRate = document.getElementById("showComparisonRate");
+      const showRate = document.getElementById("showRate");
+      const ioMessage = document.getElementById("ioMessage");
+      const rateTypeVariableBtn = document.getElementById("rateTypeVariable");
+      const rateTypeFixedBtn = document.getElementById("rateTypeFixed");
+      const showRateType = document.getElementById("showRateType");
+
+      const rateOptions = {
+        variable: {
+          pi: [
+            {
+              value: "6.74",
+              label: "6.74% p.a standard variable 80% or less LVR",
+            },
+            {
+              value: "6.94",
+              label: "6.94% p.a standard variable more than 80% LVR",
+            },
+            { value: "7.49", label: "7.49% p.a simplicity PLUS" },
+            {
+              value: "5.89",
+              label:
+                "5.89% p.a simplicity PLUS special offer discount 60% or less LVR*",
+            },
+            {
+              value: "5.94",
+              label:
+                "5.94% p.a simplicity PLUS special offer discount 70% or less LVR*",
+            },
+            {
+              value: "6.04",
+              label:
+                "6.04% p.a simplicity PLUS special offer discount 80% or less LVR*",
+            },
+            {
+              value: "6.59",
+              label:
+                "6.59% p.a simplicity PLUS special offer discount 90% or less LVR*",
+            },
+            {
+              value: "7.14",
+              label:
+                "7.14% p.a simplicity PLUS special offer discount more than 90% LVR*",
+            },
+          ],
+          io: [
+            {
+              value: "7.29",
+              label: "7.29% p.a standard variable 80% or less LVR",
+              comparison: "6.98",
+            },
+            {
+              value: "7.49",
+              label: "7.49% p.a standard variable more than 80% LVR",
+              comparison: "7.19",
+            },
+          ],
+        },
+        fixed: {
+          pi: {
+            "1": [
+              { value: "6.79", label: "6.79% p.a 1 year fixed" },
+              {
+                value: "6.34",
+                label: "6.34% p.a 1 year fixed 80% or less LVR",
+              },
+            ],
+            "2": [
+              { value: "6.64", label: "6.64% p.a 2 year fixed" },
+              {
+                value: "6.19",
+                label: "6.19% p.a 2 year fixed 80% or less LVR",
+              },
+            ],
+            "3": [
+              { value: "6.94", label: "6.94% p.a 3 year fixed" },
+              {
+                value: "6.49",
+                label: "6.49% p.a 3 year fixed 80% or less LVR",
+              },
+            ],
+            "4": [
+              { value: "6.99", label: "6.99% p.a 4 year fixed" },
+              {
+                value: "6.54",
+                label: "6.54% p.a 4 year fixed 80% or less LVR",
+              },
+            ],
+            "5": [
+              { value: "7.09", label: "7.09% p.a 5 year fixed" },
+              {
+                value: "6.64",
+                label: "6.64% p.a 5 year fixed 80% or less LVR",
+              },
+            ],
+          },
+          piAll: [
+            { value: "6.34", label: "6.34% p.a 1 year fixed" },
+            {
+              value: "5.89",
+              label: "5.89% p.a 1 year fixed 80% or less LVR",
+            },
+            { value: "6.24", label: "6.24% p.a 2 year fixed" },
+            {
+              value: "5.79",
+              label: "5.79% p.a 2 year fixed 80% or less LVR",
+            },
+            { value: "6.49", label: "6.49% p.a 3 year fixed" },
+            {
+              value: "6.04",
+              label: "6.04% p.a 3 year fixed 80% or less LVR",
+            },
+            { value: "6.54", label: "6.54% p.a 4 year fixed" },
+            {
+              value: "6.69",
+              label: "6.69% p.a 5 year fixed 80% or less LVR",
+            },
+            { value: "6.24", label: "6.24% p.a 5 year fixed" },
+            {
+              value: "5.89",
+              label: "5.89% p.a 1 year fixed 80% or less LVR",
+            },
+          ],
+          io: [
+            {
+              value: "7.29",
+              label: "7.29% p.a standard variable 80% or less LVR",
+              comparison: "6.98",
+            },
+            {
+              value: "7.49",
+              label: "7.49% p.a standard variable more than 80% LVR",
+              comparison: "7.19",
+            },
+          ],
+        },
+      };
+
+      let currentRateType = "Variable";
+
+      const populateRates = (paymentType, rateType) => {
+        const typeKey = rateType === "Fixed" ? "fixed" : "variable";
+        let options = [];
+
+        if (typeKey === "fixed") {
+          if (paymentType === "pi") {
+            options = rateOptions.fixed.piAll;
+          } else {
+            const termKey = paymentType.split("-")[1] || "1";
+            options = rateOptions.fixed.pi[termKey] || [];
+          }
+        } else {
+          const key = paymentType === "pi" ? "pi" : "io";
+          options = rateOptions.variable[key];
+        }
+
+        rateSelect.innerHTML = "";
+
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "Please select";
+        placeholder.selected = true;
+        rateSelect.appendChild(placeholder);
+
+        options.forEach((opt) => {
+          const optionEl = document.createElement("option");
+          optionEl.value = opt.value;
+          optionEl.textContent = opt.label;
+          if (opt.comparison) {
+            optionEl.dataset.comparison = opt.comparison;
+          }
+          rateSelect.appendChild(optionEl);
+        });
+      };
+
+      const populateYears = () => {
+        yearsSelect.innerHTML = "";
+        for (let year = 1; year <= 30; year += 1) {
+          const optionEl = document.createElement("option");
+          optionEl.value = String(year);
+          optionEl.textContent = String(year);
+          if (year === 30) {
+            optionEl.selected = true;
+          }
+          yearsSelect.appendChild(optionEl);
+        }
+      };
+
+      const setPaymentTypeOptions = (rateType) => {
+        paymentTypeSelect.innerHTML = "";
+
+        if (rateType === "Fixed") {
+          const fixedOptions = [
+            { value: "pi", label: "Principal and Interest" },
+            { value: "fixed-1", label: "1 year fixed" },
+            { value: "fixed-2", label: "2 year fixed" },
+            { value: "fixed-3", label: "3 year fixed" },
+            { value: "fixed-4", label: "4 year fixed" },
+            { value: "fixed-5", label: "5 year fixed" },
+          ];
+
+          fixedOptions.forEach((opt, index) => {
+            const optionEl = document.createElement("option");
+            optionEl.value = opt.value;
+            optionEl.textContent = opt.label;
+            if (index === 0) {
+              optionEl.selected = true;
+            }
+            paymentTypeSelect.appendChild(optionEl);
+          });
+        } else {
+          const variableOptions = [
+            { value: "pi", label: "Principal and Interest" },
+            { value: "io-1", label: "1 year interest only" },
+            { value: "io-2", label: "2 year interest only" },
+            { value: "io-3", label: "3 year interest only" },
+            { value: "io-4", label: "4 year interest only" },
+            { value: "io-5", label: "5 year interest only" },
+          ];
+
+          variableOptions.forEach((opt, index) => {
+            const optionEl = document.createElement("option");
+            optionEl.value = opt.value;
+            optionEl.textContent = opt.label;
+            if (index === 0) {
+              optionEl.selected = true;
+            }
+            paymentTypeSelect.appendChild(optionEl);
+          });
+        }
+      };
+
+      setPaymentTypeOptions(currentRateType);
+      populateRates(paymentTypeSelect.value, currentRateType);
+      populateYears();
+
+      const setRateType = (type) => {
+        if (type === "Fixed") {
+          currentRateType = "Fixed";
+          rateTypeFixedBtn.className =
+            "bg-primary text-white px-6 py-2 rounded";
+          rateTypeVariableBtn.className = "border px-6 py-2 rounded";
+          showRateType.innerText = "Fixed";
+        } else {
+  
+          currentRateType = "Variable";
+          rateTypeVariableBtn.className =
+            "bg-primary text-white px-6 py-2 rounded";
+          rateTypeFixedBtn.className = "border px-6 py-2 rounded";
+          showRateType.innerText = "Variable";
+        }
+        setPaymentTypeOptions(currentRateType);
+        populateRates(paymentTypeSelect.value, currentRateType);
+        comparisonRateEl.innerText = "-%";
+        showComparisonRate.innerText = "-%";
+        showRate.innerText = "-%";
+        ioMessage.classList.add("hidden");
+        ioMessage.innerText = "";
+      };
+
+      rateTypeVariableBtn.addEventListener("click", () => {
+        setRateType("Variable");
+      });
+
+      rateTypeFixedBtn.addEventListener("click", () => {
+        setRateType("Fixed");
+      });
+
+      paymentTypeSelect.addEventListener("change", (e) => {
+        populateRates(e.target.value, currentRateType);
+        comparisonRateEl.innerText = "-%";
+        showComparisonRate.innerText = "-%";
+        showRate.innerText = "-%";
+        ioMessage.classList.add("hidden");
+        ioMessage.innerText = "";
+      });
+      
+      rateSelect.addEventListener("change", () => {
+        const selectedOption = rateSelect.options[rateSelect.selectedIndex];
+        const comparisonValue =
+          selectedOption && selectedOption.dataset
+            ? selectedOption.dataset.comparison
+            : "";
+
+        if (rateSelect.value) {
+          const comparisonText = comparisonValue
+            ? comparisonValue + "% p.a"
+            : rateSelect.value + "% p.a";
+
+          comparisonRateEl.innerText = comparisonText;
+          showComparisonRate.innerText = comparisonText;
+          showRate.innerText = selectedOption.text;
+        } else {
+          comparisonRateEl.innerText = "-%";
+          showComparisonRate.innerText = "-%";
+          showRate.innerText = "-%";
+        }
+      });
+
+      const getFrequencyMultiplier = () => {
+        const freq = frequencySelect.value;
+        if (freq === "Weekly") return 12 / 52;
+        if (freq === "Fortnightly") return 12 / 26;
+        return 1;
+      };
+
+      const formatFrequencyLabel = () => {
+        const freq = frequencySelect.value;
+        if (freq === "Weekly") return "per week";
+        if (freq === "Fortnightly") return "per fortnight";
+        return "per month";
+      };
+
+      const calculate = () => {
+        const loan = parseFloat(document.getElementById("loan").value);
+
+        const annualRate = parseFloat(rateSelect.value);
+        const rate = annualRate / 100 / 12;
+
+        const years = parseFloat(document.getElementById("years").value);
+
+        const n = years * 12;
+
+        const paymentType = paymentTypeSelect.value;
+
+        let monthlyPayment = 0;
+
+        if (paymentType.startsWith("io")) {
+          // Interest-only repayment for selected IO period (monthly interest)
+          monthlyPayment = loan * rate;
+        } else {
+          // Principal + interest repayment
+          monthlyPayment =
+            (loan * rate * Math.pow(1 + rate, n)) /
+            (Math.pow(1 + rate, n) - 1);
+        }
+
+        const frequencyMultiplier = getFrequencyMultiplier();
+        const displayPayment = monthlyPayment * frequencyMultiplier;
+
+        if (Number.isFinite(displayPayment)) {
+          document.getElementById("result").innerText =
+            displayPayment.toFixed(0);
+        } else {
+          document.getElementById("result").innerText = "0";
+        }
+
+        const selectedOption = rateSelect.options[rateSelect.selectedIndex];
+        const comparisonValue =
+          selectedOption && selectedOption.dataset
+            ? selectedOption.dataset.comparison
+            : "";
+        const comparisonText = rateSelect.value
+          ? (comparisonValue ? comparisonValue : rateSelect.value) + "% p.a"
+          : "-%";
+
+        comparisonRateEl.innerText = comparisonText;
+        showComparisonRate.innerText = comparisonText;
+        showRate.innerText = rateSelect.value
+          ? selectedOption.text
+          : "-%";
+
+        if (paymentType.startsWith("io") && Number.isFinite(annualRate)) {
+          const ioYears = parseInt(paymentType.split("-")[1], 10);
+          const remainingYears = years - ioYears;
+
+          if (remainingYears > 0) {
+            const remainingMonths = remainingYears * 12;
+            const remainingPayment =
+              (loan * rate * Math.pow(1 + rate, remainingMonths)) /
+              (Math.pow(1 + rate, remainingMonths) - 1);
+
+            if (Number.isFinite(remainingPayment)) {
+              const remainingDisplay =
+                remainingPayment * getFrequencyMultiplier();
+              const frequencyLabel = formatFrequencyLabel();
+              ioMessage.innerText = `After the ${ioYears} year interest only period ends, based on current rates (which may change) your estimated payments will be $${remainingPayment.toFixed(
+                0
+              )} per month over the remaining loan term.`;
+              if (frequencyLabel !== "per month") {
+                ioMessage.innerText = `After the ${ioYears} year interest only period ends, based on current rates (which may change) your estimated payments will be $${remainingDisplay.toFixed(
+                  0
+                )} ${frequencyLabel} over the remaining loan term.`;
+              }
+              ioMessage.classList.remove("hidden");
+            } else {
+              ioMessage.classList.add("hidden");
+              ioMessage.innerText = "";
+            }
+          } else {
+            ioMessage.classList.add("hidden");
+            ioMessage.innerText = "";
+          }
+        } else {
+          ioMessage.classList.add("hidden");
+          ioMessage.innerText = "";
+        }
+      };
+
+      btn.addEventListener("click", () => {
+        calculate();
+      });
+
+      frequencySelect.addEventListener("change", () => {
+        calculate();
+      });
+    });
+  </script>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
 </Layout>
