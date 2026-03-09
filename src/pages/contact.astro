@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 const wpApiUrl = import.meta.env.PUBLIC_WP_API_URL || "";
 const wpBaseUrl = wpApiUrl.replace(/\/wp-json\/wp\/v2\/?$/i, "");
-const cf7FormId = 24;
+const cf7FormId = 7;
 const cf7Endpoint = wpBaseUrl
   ? `${wpBaseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7FormId}/feedback`
   : "";
