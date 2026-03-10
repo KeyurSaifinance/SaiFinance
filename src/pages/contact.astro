@@ -404,7 +404,10 @@ const cf7ConfigEndpoint = wpBaseUrl
                 });
                 const data = await response.json();
 
-                if (data?.status === "mail_sent") {
+                const status = data?.status;
+                const isValidationFailed = status === "validation_failed";
+                if (response.ok && !isValidationFailed) {
+                    showError(submitError, false);
                     form.classList.add("hidden");
                     thankYou.classList.remove("hidden");
                     thankYou.scrollIntoView({ behavior: "smooth", block: "center" });
