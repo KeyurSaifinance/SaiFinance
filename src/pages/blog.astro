@@ -141,19 +141,18 @@ import Footer from "../components/Footer.astro";
                 <div
                     class="mt-8 flex flex-wrap text-center items-center justify-center gap-4"
                 >
-                    <div
-                        class="flex w-full max-w-[320px] items-center text-center gap-3 rounded-xl bg-white lg:px-5 py-2 text-[#1E2E4A] w-auto"
+                    <a
+                        href="mailto:keyur@SAIFinance.com.au"
+                        class="flex justify-center items-center lg:w-full lg:max-w-[320px] gap-3 rounded-xl bg-white px-2 lg:px-5 py-2 text-[#1E2E4A] w-[300px]"
                     >
                         <span
-                            class="font-Arial font-normal
-         text-[17px] leading-[31.86px]
-         tracking-[0px] text-center
-         text-[#14254A] block"
+                            class="font-Arial font-normal text-[17px] leading-[31.86px] tracking-[0px] text-center text-[#14254A]"
                         >
                             Enter your business email
                         </span>
+
                         <span class="text-[#1E2E4A]">&#8594;</span>
-                    </div>
+                    </a> 
 
                     <a
                         href="/contact"
@@ -164,7 +163,7 @@ import Footer from "../components/Footer.astro";
          text-[17px] leading-[35px]
          tracking-[0px] text-white
          text-center
-         hover:bg-white/10 transition-colors duration-200"
+         hover:bg-white/10 transition-colors duration-200 w-[300px]"
                     >
                         Get Finance Tips
                         <span>&#8594;</span>
@@ -175,6 +174,6 @@ import Footer from "../components/Footer.astro";
     </section>
 
     <Fragment slot="footer">
-		<Footer />
-	</Fragment>
+        <Footer />
+    </Fragment>
 </Layout>
