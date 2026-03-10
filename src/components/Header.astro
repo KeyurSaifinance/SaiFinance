@@ -188,20 +188,35 @@ const isActive = (path) => {
             </a>
 
             <div class="flex flex-col gap-1">
-                <button
-                    type="button"
+                <div
                     class:list={[
-                        "flex items-center justify-between rounded-lg px-3 py-2 font-Poppins text-[16px] leading-[24px] w-full text-left",
+                        "flex items-center justify-between rounded-lg px-3 py-2",
                         isActive("/services")
                             ? "text-primary font-semibold"
                             : "text-[#9CABC3]",
                     ]}
-                    data-submenu-toggle="services"
-                    aria-expanded="false"
                 >
-                    <span>Services</span>
-                    <Icon name="ph:caret-down" size="16" class="transition-transform duration-200" data-submenu-icon="services" />
-                </button>
+                    <a
+                        href="/services"
+                        class="font-Poppins text-[16px] leading-[24px]"
+                    >
+                        Services
+                    </a>
+                    <button
+                        type="button"
+                        class="inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-white/60"
+                        data-submenu-toggle="services"
+                        aria-expanded="false"
+                        aria-label="Toggle Services submenu"
+                    >
+                        <Icon
+                            name="ph:caret-down"
+                            size="16"
+                            class="transition-transform duration-200"
+                            data-submenu-icon="services"
+                        />
+                    </button>
+                </div>
                 <div class="flex flex-col gap-1 pl-3 hidden" data-submenu-panel="services">
                     <a
                         href="/services/home-loan"
