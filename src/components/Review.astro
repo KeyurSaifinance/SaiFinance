@@ -1,4 +1,29 @@
-<section class="mx-auto max-w-6xl px-6 py-18">
+---
+const testimonials = [
+    {
+        name: "Celina Li",
+        quote:
+            "Peace of mind, one stop service. It was my greatest honor to meet Keyur. If you're thinking of buying, KB is the person to go for. Contactable, helpful and trustworthy. Highly recommended!",
+    },
+    {
+        name: "Leslee Anne Pane",
+        quote:
+            "He made the refinancing of our home quick and easy with no stress. He explained everything I needed to know and helped us throughout the process. In less than 8 weeks, settlement was done.",
+    },
+    {
+        name: "Ajeet Mistry",
+        quote:
+            "Keyur helped us assess our home refinance. Highly recommend him for his skills. He is professional, prompt in communication and coordination, and provides clever solutions in structuring the home loan.",
+    },
+    {
+        name: "Charl Ang",
+        quote:
+            "Keyur helped us refinance our home. I thought it would be tedious, but the process was smooth. He is very professional and knowledgeable in every detail and information. He gives advice whenever necessary and is someone you can trust and depend on. Thank you, KB. Clint and I speak so highly of you.",
+    },
+];
+---
+
+<section class="mx-auto max-w-6xl px-6 py-18" data-review-slider>
     <div class="grid lg:gap-18 gap-10 lg:grid-cols-2 lg:items-center">
         <div class="relative">
             <img
@@ -50,29 +75,117 @@
                         class="lg:h-12 lg:w-12 h-8 w-8"
                     />
                 </div>
-                <p
-                    class="mt-2 font-Inter font-normal
-         lg:text-[20px] text-[18px] lg:leading-[35px] leading-[28px]
-         text-[#14254A];
-"
-                >
-                    “ Working with several word themes templates the last years
-                    only can say this is best in every level use it for my
-                    reviews that I have already are company and the reviews that
-                    I have already are all excellent. Not only the design.”
-                </p>
-            </div>
 
-            <div class="mt-6">
-                <p
-                    class="font-Poppins text-[20px] font-semibold text-primary"
+                <div
+                    class="relative mt-2 min-h-[280px] lg:min-h-[240px]"
+                    data-testimonial-slider
                 >
-                    Marvin mckinney
-                </p>
-                <p class="font-dm-sans text-[16px] text-[#9AA4B2]">
-                    Product Manager
-                </p>
+                    {
+                        testimonials.map((item, index) => (
+                            <article
+                                data-testimonial-slide
+                                class:list={[
+                                    "absolute inset-0 transition-opacity duration-300",
+                                    index === 0
+                                        ? "opacity-100"
+                                        : "opacity-0 pointer-events-none",
+                                ]}
+                            >
+                                <p
+                                    class="font-Inter font-normal
+         lg:text-[20px] text-[18px] lg:leading-[35px] leading-[28px]
+         text-[#14254A]"
+                                >
+                                    "{item.quote}"
+                                </p>
+
+                                <div class="mt-6">
+                                    <p
+                                        class="font-Poppins text-[20px] font-semibold text-primary"
+                                    >
+                                        {item.name}
+                                    </p>
+                                </div>
+                            </article>
+                        ))
+                    }
+                </div>
+
+                <div class="lg:mt-6 flex justify-end">
+                    <button
+                        type="button"
+                        data-testimonial-next
+                        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#CFD8E9] text-primary hover:bg-[#EEF3FB]"
+                        aria-label="Next testimonial"
+                    >
+                        &#8594;
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    const reviewRoot = document.querySelector("[data-review-slider]");
+    const slider = reviewRoot?.querySelector("[data-testimonial-slider]");
+
+    if (slider) {
+        const slides = Array.from(
+            slider.querySelectorAll("[data-testimonial-slide]")
+        );
+        const nextBtn = reviewRoot?.querySelector("[data-testimonial-next]");
+
+        if (slides.length > 0) {
+            let currentIndex = 0;
+            let autoplayId;
+
+            const showSlide = (index) => {
+                if (index >= slides.length) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = slides.length - 1;
+                } else {
+                    currentIndex = index;
+                }
+
+                slides.forEach((slide, slideIndex) => {
+                    const isActive = slideIndex === currentIndex;
+                    slide.classList.toggle("opacity-100", isActive);
+                    slide.classList.toggle("opacity-0", !isActive);
+                    slide.classList.toggle("pointer-events-none", !isActive);
+                });
+            };
+
+            const nextSlide = () => {
+                if (currentIndex === slides.length - 1) {
+                    showSlide(0);
+                    return;
+                }
+                showSlide(currentIndex + 1);
+            };
+
+            const stopAutoplay = () => {
+                if (autoplayId) {
+                    window.clearInterval(autoplayId);
+                }
+            };
+
+            const startAutoplay = () => {
+                stopAutoplay();
+                autoplayId = window.setInterval(() => {
+                    nextSlide();
+                }, 3000);
+            };
+
+            nextBtn?.addEventListener("click", (event) => {
+                event.preventDefault();
+                nextSlide();
+                startAutoplay();
+            });
+
+            showSlide(0);
+            startAutoplay();
+        }
+    }
+</script>
