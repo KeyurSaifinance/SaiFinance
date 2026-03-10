@@ -12,9 +12,6 @@ const cf7FormId = 10;
 const cf7Endpoint = wpBaseUrl
   ? `${wpBaseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7FormId}/feedback`
   : "";
-const cf7ConfigEndpoint = wpBaseUrl
-  ? `${wpBaseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7FormId}`
-  : "";
 ---
 
 <Layout>
@@ -46,7 +43,6 @@ const cf7ConfigEndpoint = wpBaseUrl
                 id="contact-form"
                 class="rounded-[24px] border border-[#203A6E] bg-white px-10 py-10 shadow-sm md:px-16 md:py-16"
                 data-endpoint={cf7Endpoint}
-                data-config-endpoint={cf7ConfigEndpoint}
             >
                 <div class="grid gap-8 md:grid-cols-2">
                     <div class="flex flex-col gap-3">
@@ -305,21 +301,31 @@ const cf7ConfigEndpoint = wpBaseUrl
 </Layout>
 
 <script>
-    const form = document.querySelector("#contact-form");
-    const thankYou = document.querySelector("#contact-thankyou");
-    const emailInput = document.querySelector("#email");
-    const phoneInput = document.querySelector("#phone");
-    const emailError = document.querySelector('[data-error="email"]');
-    const phoneError = document.querySelector('[data-error="phone"]');
-    const submitError = document.querySelector('[data-error="submit"]');
-    const wpcf7Version = document.querySelector("#wpcf7-version");
-    const wpcf7Locale = document.querySelector("#wpcf7-locale");
-    const wpcf7UnitTag = document.querySelector("#wpcf7-unit-tag");
-    const wpcf7ContainerPost = document.querySelector("#wpcf7-container-post");
+    const form = document.querySelector("#contact-form") as HTMLFormElement | null;
+    const thankYou = document.querySelector("#contact-thankyou") as HTMLElement | null;
+    const emailInput = document.querySelector("#email") as HTMLInputElement | null;
+    const phoneInput = document.querySelector("#phone") as HTMLInputElement | null;
+    const emailError = document.querySelector('[data-error="email"]') as HTMLElement | null;
+    const phoneError = document.querySelector('[data-error="phone"]') as HTMLElement | null;
+    const submitError = document.querySelector('[data-error="submit"]') as HTMLElement | null;
+    const wpcf7Version = document.querySelector("#wpcf7-version") as HTMLInputElement | null;
+    const wpcf7Locale = document.querySelector("#wpcf7-locale") as HTMLInputElement | null;
+    const wpcf7UnitTag = document.querySelector("#wpcf7-unit-tag") as HTMLInputElement | null;
+    const wpcf7ContainerPost = document.querySelector(
+        "#wpcf7-container-post"
+    ) as HTMLInputElement | null;
+    const wpcf7Id = document.querySelector("#wpcf7-id") as HTMLInputElement | null;
 
-    const showError = (el, show) => {
+    const showError = (el: HTMLElement | null, show: boolean) => {
         if (!el) return;
         el.classList.toggle("hidden", !show);
+    };
+
+    const applyFallbackConfig = () => {
+        if (!wpcf7Locale || !wpcf7ContainerPost) return false;
+        wpcf7Locale.value = wpcf7Locale.value || "en_US";
+        wpcf7ContainerPost.value = wpcf7ContainerPost.value || "0";
+        return true;
     };
 
     const ensureCf7Config = async () => {
@@ -333,13 +339,26 @@ const cf7ConfigEndpoint = wpBaseUrl
 
         const configEndpoint = form.getAttribute("data-config-endpoint");
         if (!configEndpoint) {
-            wpcf7Locale.value = wpcf7Locale.value || "en_US";
-            wpcf7ContainerPost.value = wpcf7ContainerPost.value || "0";
-            return true;
+            return applyFallbackConfig();
+        }
+
+        let configUrl;
+        try {
+            configUrl = new URL(configEndpoint, window.location.href);
+        } catch (error) {
+            return applyFallbackConfig();
+        }
+
+        // Skip cross-origin config requests to avoid 403 noise on static host.
+        if (configUrl.origin !== window.location.origin) {
+            return applyFallbackConfig();
         }
 
         try {
-            const response = await fetch(configEndpoint);
+            const response = await fetch(configUrl.toString());
+            if (!response.ok) {
+                return applyFallbackConfig();
+            }
             const data = await response.json();
             if (data?.id) {
                 wpcf7Version.value = data?.properties?.version || data?.version || "";
@@ -348,26 +367,22 @@ const cf7ConfigEndpoint = wpBaseUrl
                 return true;
             }
         } catch (error) {
-            wpcf7Locale.value = wpcf7Locale.value || "en_US";
-            wpcf7ContainerPost.value = wpcf7ContainerPost.value || "0";
-            return true;
+            return applyFallbackConfig();
         }
 
-        wpcf7Locale.value = wpcf7Locale.value || "en_US";
-        wpcf7ContainerPost.value = wpcf7ContainerPost.value || "0";
-        return true;
+        return applyFallbackConfig();
     };
 
     const setUnitTag = () => {
         if (!wpcf7UnitTag) return;
         const containerPost = wpcf7ContainerPost?.value || "0";
-        const formId = document.querySelector("#wpcf7-id")?.value || "7";
+        const formId = wpcf7Id?.value || "7";
         const unique = Date.now();
         wpcf7UnitTag.value = `wpcf7-f${formId}-p${containerPost}-o${unique}`;
     };
 
     if (form && thankYou && emailInput && phoneInput) {
-        form.addEventListener("submit", async (event) => {
+        form.addEventListener("submit", async (event: SubmitEvent) => {
             event.preventDefault();
 
             const emailValid = emailInput.checkValidity() && emailInput.value.trim() !== "";
