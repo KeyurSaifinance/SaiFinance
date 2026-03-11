@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 
 <footer class="bg-primary text-white">
     <div class="mx-auto max-w-7xl px-6 py-14 md:px-14 lg:px-6">
-        <div class="grid gap-10 lg:gap-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] md:grid-cols-2">
+        <div class="grid gap-6 lg:gap-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] md:grid-cols-2">
             <!-- Brand -->
             <div>
                 <img
@@ -46,14 +46,13 @@ import { Icon } from "astro-icon/components";
                         <!-- <Icon name="ph:twitter-logo" size="16" /> -->
                             <img src="/img/twitter.png" alt="Twitter" class="" />
                     </a>
-                    <a
+                    <!-- <a
                         href=""
                         class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#16264b] hover:opacity-90"
                         aria-label="Instagram"
                     >
-                        <!-- <Icon name="ph:instagram-logo" size="16" /> -->
                             <img src="/img/instagram.png" alt="Instagram" class="h-4 w-4" />
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -159,35 +158,27 @@ import { Icon } from "astro-icon/components";
                 <h3
                     class="font-Poppins font-semibold text-[22px] leading-[32px] tracking-normal text-white"
                 >
-                    Information
+                    Contact
                 </h3>
                 <ul class="mt-4 space-y-3 text-sm text-[#B1B1B1]">
-                    <li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 text-white">
+                            <Icon name="ph:envelope-simple" size="18" />
+                        </span>
                         <a
-                            href="/process"
+                            href="mailto:keyur@saifinance.com.au"
                             class="font-Inter font-normal text-[16px] leading-[26px] tracking-normal text-[#B1B1B1] hover:text-white"
-                            >Working Process</a
+                            >keyur@saifinance.com.au</a
                         >
                     </li>
-                    <li>
-                        <a
-                            href="/privacy"
-                            class="font-Inter font-normal text-[16px] leading-[26px] tracking-normal text-[#B1B1B1] hover:text-white"
-                            >Privacy Policy</a
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 text-white">
+                            <Icon name="ph:clock" size="18" />
+                        </span>
+                        <span
+                            class="font-Inter font-normal text-[16px] leading-[26px] tracking-normal text-[#B1B1B1]"
+                            >Mon - Sat 8:00 AM - 8:00 PM</span
                         >
-                    </li>
-                    <li>
-                        <a
-                            href="/terms"
-                            class="font-Inter font-normal text-[16px] leading-[26px] tracking-normal text-[#B1B1B1] hover:text-white"
-                            >Terms & Conditions</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="/faqs"
-                            class="font-Inter font-normal text-[16px] leading-[26px] tracking-normal text-[#B1B1B1] hover:text-white"
-                            >Faqs</a>
                     </li>
                 </ul>
             </div>
@@ -205,7 +196,7 @@ import { Icon } from "astro-icon/components";
             </p>
 
             <div class="flex items-center gap-6">
-                <a
+                <!-- <a
                     href="/privacy"
                     class="font-Inter font-normal text-[18px] leading-[26px] tracking-normal text-[#F9F9FA] hover:text-white"
                     >Privacy & Terms</a
@@ -219,7 +210,7 @@ import { Icon } from "astro-icon/components";
                     href="/contact"
                     class="font-Inter font-normal text-[18px] leading-[26px] tracking-normal text-[#F9F9FA] hover:text-white"
                     >Contact Us</a
-                >
+                > -->
             </div>
         </div>
     </div>
