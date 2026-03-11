@@ -20,14 +20,14 @@ import CtaButton from "../components/CtaButton.astro";
 	</Fragment>
 
 	<!-- Hero (section 1)-->
-	<section class="relative overflow-hidden bg-[#0f2147] text-white">
-		<div class="absolute inset-0">
+	<section class="relative isolate overflow-hidden bg-[#0f2147] text-white">
+		<div class="absolute inset-0 -z-10">
 			<img
 				src="/img/hero.webp"
 				alt="SAI Finance"
-				class="h-full w-full object-cover"
+				class="h-full w-full object-cover object-[72%_center] md:object-center"
 			/>
-			<div class="absolute"></div>
+			<div class="lg:hidden block absolute inset-0 bg-[#0f2147]/45"></div>
 		</div>
 
 		<div class="relative mx-auto max-w-6xl lg:px-0 px-6 py-16 lg:py-24">

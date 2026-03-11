@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 export interface ServiceCard {
     title: string;
     description: string;
@@ -304,21 +306,29 @@ const {
             }
         </div>
 
-        <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {
                 services.map((item) => (
-                    <div class="rounded-[16px] bg-white p-6 shadow-[0_18px_40px_-28px_rgba(15,40,71,0.5)] ring-1 ring-black/5">
-                        <div class="flex items-start gap-4">
+                    <div class="rounded-[16px] bg-white p-4 sm:p-5 lg:p-6 shadow-[0_18px_40px_-28px_rgba(15,40,71,0.5)] ring-1 ring-black/5">
+                        <div class="flex items-start gap-3 sm:gap-4">
                             <span
-                                class="mt-1 inline-flex items-center justify-center h-12 w-16 rounded-xl bg-primary shadow-[0_8px_10px_-6px_#0000001A,0_20px_25px_-5px_#0000001A] text-white"
+                                class="mt-0.5 sm:mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-white shadow-[0_8px_10px_-6px_#0000001A,0_20px_25px_-5px_#0000001A] lg:h-12 lg:w-12 lg:rounded-xl"
                             >
                                 {item.icon ? (
-                                    <img
-                                        src={item.icon}
-                                        alt={item.iconAlt ?? item.title}
-                                        class="h-5 w-5"
-                                        loading="lazy"
-                                    />
+                                    item.icon.startsWith("/") ? (
+                                        <img
+                                            src={item.icon}
+                                            alt={item.iconAlt ?? item.title}
+                                            class="h-4 w-4 sm:h-5 sm:w-5"
+                                            loading="lazy"
+                                        />
+                                    ) : (
+                                        <Icon
+                                            name={item.icon}
+                                            class="h-4 w-4 sm:h-5 sm:w-5"
+                                            aria-hidden="true"
+                                        />
+                                    )
                                 ) : (
                                     <span
                                         class="block h-2.5 w-2.5 rounded-full bg-white/80"
@@ -326,11 +336,11 @@ const {
                                     />
                                 )}
                             </span>
-                            <div>
-                                <h3 class="font-Arial font-bold text-[18px] leading-[30px] tracking-normal text-[#1E3A5F]">
+                            <div class="min-w-0">
+                                <h3 class="font-Arial font-bold text-[16px] leading-[24px] tracking-normal text-[#1E3A5F] sm:text-[18px] sm:leading-[30px]">
                                     {item.title}
                                 </h3>
-                                <p class="mt-2 text-[13px] leading-[22px] text-[#6B7A93]">
+                                <p class="mt-1.5 text-[13px] leading-[20px] text-[#6B7A93] sm:mt-2 sm:leading-[22px]">
                                     {item.description}
                                 </p>
                             </div>
