@@ -24,7 +24,7 @@
         </a>
       </div> -->
 
-      <div class="mt-6 overflow-hidden rounded-sm bg-[#eef2f5] shadow-sm">
+      <div class="mt-6 overflow-hidden rounded-xl bg-[#eef2f5] shadow-sm">
         <div class="grid xl:grid-cols-3 lg:grid-cols-2">
           <section class="bg-[#eef2f5] p-4 lg:p-5 lg:border-r lg:border-white/80">
             <h2 class="text-[30px] font-normal leading-none text-primary">
@@ -334,7 +334,7 @@
           </section>
         </div>
 
-        <div class="border-t border-white/80 px-4 py-4 text-center">
+        <div class="border-t border-white/80 px-4 py-8 text-center">
           <button
             class="inline-flex min-h-[42px] items-center justify-center rounded border border-primary bg-primary px-5 text-[13px] font-semibold text-white transition hover:bg-[#0f2147]/90"
             type="button"
@@ -345,7 +345,7 @@
         </div>
       </div>
 
-      <div class="mt-8 rounded-sm bg-[#eef2f5] p-8 shadow-sm">
+      <div class="mt-8 rounded-xl bg-[#eef2f5] p-8 shadow-sm">
         <section>
           <h2 class="text-[15px] font-bold leading-5 text-primary">
             We estimate you could borrow:
@@ -500,7 +500,7 @@ import {
   type PropertyType,
 } from '../lib/homeLoanBorrowingPowerData'
 
-const labelClass = 'block text-[14px] font-semibold leading-4 text-[#24374c]'
+const labelClass = 'block text-gray-600 text-sm font-Inter ui-sans-serif'
 const selectClass =
   'mt-2 min-h-[44px] w-full border border-[#8f99a7] bg-white px-3 text-[13px] text-[#16263f] outline-none rounded'
 const moneyFieldWrapperClass =

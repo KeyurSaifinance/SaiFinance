@@ -207,7 +207,7 @@
           </div>
         </div>
 
-        <div class="rounded-sm shadow-sm bg-[#eef2f5] p-8">
+        <div class="rounded-xl shadow-sm bg-[#eef2f5] p-8">
           <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
             <h2 class="text-2xl font-semibold text-primary">
               Your estimated repayments
