@@ -1,6 +1,6 @@
 <template>
   <section class="py-12">
-    <div class="mx-auto max-w-7xl lg:px-6">
+    <div class="mx-auto max-w-7xl lg:px-6 md:px-6">
       <h1 class="mb-10 text-[20px] lg:text-[30px] font-bold lg:leading-[48px] tracking-normal text-primary">
         Home loan repayment calculator
       </h1>
