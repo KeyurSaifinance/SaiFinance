@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-white py-6 lg:py-12 font-Arial md:py-14">
-    <div class="mx-auto max-w-7xl lg:px-6 md:px-14 px-6">
+  <section class="bg-white py-12 font-Arial">
+    <div class="mx-auto max-w-7xl px-6 lg:px-6">
       <h1 class="mb-10 text-[20px] lg:text-[30px] font-bold lg:leading-[48px] tracking-normal text-primary">Home loan borrowing power calculator</h1>
 
       <!-- <div
@@ -24,9 +24,9 @@
         </a>
       </div> -->
 
-      <div class="mt-6 border border-[#d6dde5] bg-[#eef2f5]">
-        <div class="grid lg:grid-cols-3">
-          <section class="bg-[#eef2f5] p-4 sm:p-5 lg:border-r lg:border-white/80">
+      <div class="mt-6 overflow-hidden rounded-sm bg-[#eef2f5] shadow-sm">
+        <div class="grid xl:grid-cols-3 lg:grid-cols-2">
+          <section class="bg-[#eef2f5] p-4 lg:p-5 lg:border-r lg:border-white/80">
             <h2 class="text-[30px] font-normal leading-none text-primary">
               Your details
             </h2>
@@ -93,7 +93,7 @@
             </div>
           </section>
 
-          <section class="bg-[#eef2f5] p-4 sm:p-5 lg:border-r lg:border-white/80">
+          <section class="bg-[#eef2f5] p-4 lg:p-5 lg:border-r lg:border-white/80">
             <h2 class="text-[30px] font-normal leading-none text-primary">
               Your earnings
             </h2>
@@ -336,7 +336,7 @@
 
         <div class="border-t border-white/80 px-4 py-4 text-center">
           <button
-            class="inline-flex min-h-[42px] items-center justify-center border border-primary bg-primary px-5 text-[12px] font-bold text-white transition hover:bg-[#0062aa]"
+            class="inline-flex min-h-[42px] items-center justify-center rounded border border-primary bg-primary px-5 text-[13px] font-semibold text-white transition hover:bg-[#0f2147]/90"
             type="button"
             @click="calculateBorrowingPower"
           >
@@ -345,7 +345,7 @@
         </div>
       </div>
 
-      <div class="mt-5 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_1px_minmax(0,1fr)] lg:items-start">
+      <div class="mt-8 rounded-sm bg-[#eef2f5] p-8 shadow-sm">
         <section>
           <h2 class="text-[15px] font-bold leading-5 text-primary">
             We estimate you could borrow:
@@ -393,8 +393,6 @@
             <p>Benchmark living expenses: {{ formatCurrency(result.benchmarkLivingExpenses) }}</p>
           </div>
         </section>
-
-        <div class="hidden h-full bg-[#d6dde5] lg:block"></div>
 
         <section>
           <h2 class="text-[30px] font-normal leading-none text-primary">
@@ -504,9 +502,9 @@ import {
 
 const labelClass = 'block text-[14px] font-semibold leading-4 text-[#24374c]'
 const selectClass =
-  'mt-2 min-h-[44px] w-full border border-[#8f99a7] bg-white px-3 text-[13px] text-[#16263f] outline-none'
+  'mt-2 min-h-[44px] w-full border border-[#8f99a7] bg-white px-3 text-[13px] text-[#16263f] outline-none rounded'
 const moneyFieldWrapperClass =
-  'mt-2 flex min-h-[44px] items-center border border-[#8f99a7] bg-white px-3'
+  'mt-2 flex min-h-[44px] items-center border border-[#8f99a7] bg-white px-3 rounded'
 const moneyFieldClass =
   'calc-number-input w-full border-0 bg-transparent px-2 py-2 text-[13px] text-[#16263f] outline-none'
 const toggleBaseClass =
@@ -575,8 +573,8 @@ function getToggleClasses(isActive: boolean) {
   return [
     toggleBaseClass,
     isActive
-      ? 'border-[#003b70] bg-primary text-white'
-      : 'border-[#8f99a7] bg-white text-[#1b2a3f] hover:border-[#003b70]/60',
+      ? 'border-[#003b70] bg-primary text-white rounded'
+      : 'border-[#8f99a7] bg-white text-[#1b2a3f] hover:border-[#003b70]/60 rounded',
   ]
 }
 

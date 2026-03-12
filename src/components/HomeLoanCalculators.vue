@@ -6,7 +6,7 @@
       </h1>
 
       <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,0.9fr)]">
-        <div class="bg-[#eef2f5] border border-[#d6dde5] p-8">
+        <div class="bg-[#eef2f5] p-8 rounded-xl shadow-sm">
           <label class="text-sm text-gray-600">Property type</label>
 
           <div class="mb-6 mt-2 flex flex-wrap gap-3">
@@ -207,7 +207,7 @@
           </div>
         </div>
 
-        <div class="border border-[#d6dde5] bg-[#eef2f5] p-8">
+        <div class="rounded-sm shadow-sm bg-[#eef2f5] p-8">
           <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
             <h2 class="text-2xl font-semibold text-primary">
               Your estimated repayments
