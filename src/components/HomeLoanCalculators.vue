@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-gray-100 py-12">
-    <div class="mx-auto max-w-7xl px-6">
-      <h1 class="mb-10 text-[30px] font-bold leading-[48px] tracking-normal text-primary">
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl lg:px-6">
+      <h1 class="mb-10 text-[20px] lg:text-[30px] font-bold lg:leading-[48px] tracking-normal text-primary">
         Home loan repayment calculator
       </h1>
 
       <div class="grid items-start gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(360px,0.9fr)]">
-        <div class="rounded-lg bg-white p-8 shadow">
+        <div class="bg-[#eef2f5] border border-[#d6dde5] p-8">
           <label class="text-sm text-gray-600">Property type</label>
 
           <div class="mb-6 mt-2 flex flex-wrap gap-3">
@@ -207,7 +207,7 @@
           </div>
         </div>
 
-        <div class="rounded-lg bg-white p-8 shadow">
+        <div class="border border-[#d6dde5] bg-[#eef2f5] p-8">
           <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
             <h2 class="text-2xl font-semibold text-primary">
               Your estimated repayments

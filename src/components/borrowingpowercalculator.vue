@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-white py-10 font-Arial md:py-14">
-    <div class="mx-auto max-w-[980px] px-4 sm:px-6">
-      <h1 class="sr-only">Home loan borrowing power calculator</h1>
+  <section class="bg-white py-6 lg:py-12 font-Arial md:py-14">
+    <div class="mx-auto max-w-7xl lg:px-6 md:px-14 px-6">
+      <h1 class="mb-10 text-[20px] lg:text-[30px] font-bold lg:leading-[48px] tracking-normal text-primary">Home loan borrowing power calculator</h1>
 
-      <div
+      <!-- <div
         class="border border-[#d6dde5] bg-[#eef2f5] px-4 py-4 sm:flex sm:items-center sm:justify-between sm:gap-6"
       >
         <div class="max-w-[640px]">
@@ -22,12 +22,12 @@
         >
           Request call back
         </a>
-      </div>
+      </div> -->
 
       <div class="mt-6 border border-[#d6dde5] bg-[#eef2f5]">
         <div class="grid lg:grid-cols-3">
           <section class="bg-[#eef2f5] p-4 sm:p-5 lg:border-r lg:border-white/80">
-            <h2 class="text-[30px] font-normal leading-none text-[#003b70]">
+            <h2 class="text-[30px] font-normal leading-none text-primary">
               Your details
             </h2>
 
@@ -94,7 +94,7 @@
           </section>
 
           <section class="bg-[#eef2f5] p-4 sm:p-5 lg:border-r lg:border-white/80">
-            <h2 class="text-[30px] font-normal leading-none text-[#003b70]">
+            <h2 class="text-[30px] font-normal leading-none text-primary">
               Your earnings
             </h2>
 
@@ -192,7 +192,7 @@
           </section>
 
           <section class="bg-[#eef2f5] p-4 sm:p-5">
-            <h2 class="text-[30px] font-normal leading-none text-[#003b70]">
+            <h2 class="text-[30px] font-normal leading-none text-primary">
               Your expenses
             </h2>
 
@@ -336,7 +336,7 @@
 
         <div class="border-t border-white/80 px-4 py-4 text-center">
           <button
-            class="inline-flex min-h-[42px] items-center justify-center border border-[#0073c7] bg-[#0073c7] px-5 text-[12px] font-bold text-white transition hover:bg-[#0062aa]"
+            class="inline-flex min-h-[42px] items-center justify-center border border-primary bg-primary px-5 text-[12px] font-bold text-white transition hover:bg-[#0062aa]"
             type="button"
             @click="calculateBorrowingPower"
           >
@@ -347,11 +347,11 @@
 
       <div class="mt-5 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_1px_minmax(0,1fr)] lg:items-start">
         <section>
-          <h2 class="text-[15px] font-bold leading-5 text-[#003b70]">
+          <h2 class="text-[15px] font-bold leading-5 text-primary">
             We estimate you could borrow:
           </h2>
 
-          <div class="mt-2 text-[52px] font-semibold leading-none text-[#005b96] sm:text-[58px]">
+          <div class="mt-2 text-[52px] font-semibold leading-none text-primary sm:text-[58px]">
             {{ formatCurrency(result.borrowingPower) }}
           </div>
 
@@ -397,7 +397,7 @@
         <div class="hidden h-full bg-[#d6dde5] lg:block"></div>
 
         <section>
-          <h2 class="text-[30px] font-normal leading-none text-[#003b70]">
+          <h2 class="text-[30px] font-normal leading-none text-primary">
             What&apos;s next?
           </h2>
 
@@ -419,7 +419,7 @@
         </section>
       </div>
 
-      <div class="mt-6 border-y border-[#dce8ef] bg-[#eef8fd] px-4 py-3 text-[11px] leading-5 text-[#25465d]">
+      <!-- <div class="mt-6 border-y border-[#dce8ef] bg-[#eef8fd] px-4 py-3 text-[14px] leading-5 text-[#25465d]">
         <span class="font-bold">i</span>
         This estimate is based on the information you entered and is intended for illustrative
         purposes only. It uses a {{ borrowingPowerAssumptions.loanTermYears }}-year
@@ -427,9 +427,9 @@
         {{ selectedRateAssumption.label.toLowerCase() }}, a
         {{ borrowingPowerAssumptions.sensitivityMargin.toFixed(2) }}% assessment buffer, and
         benchmark living-expense tables.
-      </div>
+      </div> -->
 
-      <div class="mt-12 grid gap-6 lg:grid-cols-[170px_minmax(0,1fr)] lg:items-start">
+      <!-- <div class="mt-12 grid gap-6 lg:grid-cols-[170px_minmax(0,1fr)] lg:items-start">
         <div>
           <h2 class="text-[34px] font-normal leading-none text-[#003b70]">
             Featured rate
@@ -484,7 +484,7 @@
             </a>
           </div>
         </article>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -502,7 +502,7 @@ import {
   type PropertyType,
 } from '../lib/homeLoanBorrowingPowerData'
 
-const labelClass = 'block text-[11px] font-semibold leading-4 text-[#24374c]'
+const labelClass = 'block text-[14px] font-semibold leading-4 text-[#24374c]'
 const selectClass =
   'mt-2 min-h-[44px] w-full border border-[#8f99a7] bg-white px-3 text-[13px] text-[#16263f] outline-none'
 const moneyFieldWrapperClass =
@@ -510,7 +510,7 @@ const moneyFieldWrapperClass =
 const moneyFieldClass =
   'calc-number-input w-full border-0 bg-transparent px-2 py-2 text-[13px] text-[#16263f] outline-none'
 const toggleBaseClass =
-  'inline-flex min-h-[34px] items-center justify-center border px-4 text-[11px] font-bold transition'
+  'inline-flex min-h-[34px] items-center justify-center border px-4 text-[14px] font-bold transition'
 
 const applicationTypeOptions: Array<{ label: string; value: ApplicationType }> = [
   { label: 'Single', value: 'single' },
@@ -575,7 +575,7 @@ function getToggleClasses(isActive: boolean) {
   return [
     toggleBaseClass,
     isActive
-      ? 'border-[#003b70] bg-[#003b70] text-white'
+      ? 'border-[#003b70] bg-primary text-white'
       : 'border-[#8f99a7] bg-white text-[#1b2a3f] hover:border-[#003b70]/60',
   ]
 }
