@@ -6,73 +6,91 @@ import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
     breadcrumb: ["Home", "Services", "Home Loan"],
-    heroTitle: "Home Loans Made Simple",
+    heroTitle: "Home Buyers",
     heroSubtitle:
-        "Expert guidance through every step of your home buying journey, from pre-approval to settlement.",
+        "Your journey to owning a home starts with clarity, confidence, and the right lending partner.",
     heroImage: "/img/services_hero.webp",
     heroCtaPrimaryText: "Apply for Home Loan",
     heroCtaSecondaryText: "Book a Free Call",
-    aboutTitle: "About This Service",
+    aboutTitle: "Home Buyers",
     aboutText: [
-        "Buying your first home is an exciting milestone, but navigating the mortgage process can feel overwhelming. Our First Time Home Buyer service simplifies every step, from understanding your borrowing capacity to securing the best loan terms.",
-        "Our team specializes in helping first-time buyers understand their options, compare products, and make informed decisions. We handle the paperwork, negotiate on your behalf, and ensure you get the most favorable terms for your circumstances.",
-        "We work with over 60 lenders to find competitive rates and flexible options tailored to your financial situation. Whether you need guidance on deposit size, eligibility, or government assistance schemes — we’re here to help.",
+        "Buying a home is one of the biggest milestones in life. Whether you are stepping into the market for the first time or upgrading to a home that better suits your family, the process can feel overwhelming.",
+        "At SAI Finance, we make it simpler, clearer, and far less stressful by guiding you through every step - from understanding your borrowing power to securing the right loan structure for your goals.",
+        "Our approach is personal. We take the time to understand your situation, your plans, and what home means for you. Then we match you with lending options that support your long-term financial wellbeing.",
     ],
     aboutImage: "/img/service_home.png",
     benefits: [
-        "Access to 40+ lenders and competitive rates",
-        "Low deposit options for first home buyers",
-        "First Home Owner Grant assistance",
-        "Dedicated support throughout the process",
+        "How much deposit you actually need",
+        "What you can safely borrow",
+        "How to structure your loan for long-term comfort",
+        "Which government grants or schemes you may be eligible for",
+        "How to prepare for pre-approval",
+        "Seamless coordination with your real estate agent, conveyancer/solicitor, and lender",
     ],
     calculators: [
         {
             title: "Calculate Your Borrowing Power",
-            description: "Find out how much you can borrow based on your income, expenses, and financial situation.",
+            description:
+                "Find out how much you can borrow based on your income, expenses, and financial situation.",
             href: "/calculator/borrowing-power-calculator",
         },
         {
             title: "Calculate Repayment Options",
-            description: "Explore different repayment scenarios and find the loan structure that works best for your budget.",
+            description:
+                "Explore different repayment scenarios and find the loan structure that works best for your budget.",
             href: "/calculator/loan-repayment-calculator",
         },
     ],
-    servicesTitle: "Our Loan Services",
+    servicesTitle: "Understanding Your Home Loan Options",
     servicesSubtitle:
-        "Comprehensive mortgage solutions designed to meet your unique financial needs and goals.",
+        "From deposits to guarantees and government grants - we guide you through every option available.",
     services: [
         {
-            title: "First Home Buyers",
+            title: "First-Home Buyers",
             description:
-                "Expert guidance for first-time home buyers with access to competitive rates and government schemes.",
+                "Support that helps you take the first step with confidence.Many first‑home buyers wish they had started planning earlier — but the real question is: What do you need to get started today?We help you understand: How much deposit you actually needWhat you can safely borrow How to structure your loan for long‑term comfort Which government grants or schemes you may be eligible for How to prepare for pre‑approval We also coordinate with your real estate agent, conveyancer/solicitor, and lender so the process feels seamless from start to finish.",
             icon: "ph:house-line",
             iconAlt: "First Home Buyers",
         },
         {
-            title: "Refinancing",
+            title: "How Much Deposit Do You Need?",
             description:
-                "Save money by refinancing your existing loan with better rates and terms tailored to your needs.",
-            icon: "ph:arrows-clockwise",
-            iconAlt: "Refinancing",
+                "More options than you might think.Saving a 20% deposit is ideal, but not always necessary. Depending on your situation, you may be able to: Borrow up to 90–95% of the property value Use genuine savings or a combination of savings and other contributions Access low‑deposit loan options Use a Family Guarantee to reduce or eliminate Lenders Mortgage Insurance (LMI) We’ll walk you through the pros, cons, and long‑term impact of each option so you can make an informed decision.",
+            icon: "ph:bank",
+            iconAlt: "Deposit Options",
         },
         {
-            title: "Investment Properties",
+            title: "Family Guarantee",
             description:
-                "Specialized lending solutions for property investors looking to expand their portfolio.",
-            icon: "ph:buildings",
-            iconAlt: "Investment Properties",
+                "A smart way to boost your borrowing power.A Family Guarantee allows a parent or close family member to use a portion of their property’s equity as security for your loan. This can: Reduce your Loan‑to‑Value Ratio (LVR) Help you avoid LMI Allow you to borrow up to the full purchase price Get you into the market sooner We’ll help you understand how the guarantee works, the responsibilities involved, and how to structure it safely for everyone.",
+            icon: "ph:hand-heart",
+            iconAlt: "Family Guarantee",
         },
         {
-            title: "Construction Loans",
+            title: "First Home Owner Grant (FHOG)",
             description:
-                "Flexible construction loan options to help you build your dream home from the ground up.",
+                "What you can access depends on your state. Each state and territory has different eligibility rules and grant amounts. We’ll help you check what applies to you and ensure your application is completed correctly.",
+            icon: "ph:certificate",
+            iconAlt: "FHOG",
+        },
+        {
+            title: "Upgrading, Building, or Renovating",
+            description:
+                "When your next home needs to match your next chapter.If you’re planning to upgrade your home, you may be considering: Renovating your current property Buying a larger or more suitable home Building a new home A knockdown and rebuild Each option has different lending requirements, timelines, and cash‑flow considerations. We’ll help you compare the scenarios and secure the right finance solution for your upgrade.",
             icon: "ph:hammer",
-            iconAlt: "Construction Loans",
+            iconAlt: "Upgrading or Building",
+        },
+        {
+            title: "How SAI Finance Helps",
+            description:
+                "Personalised guidance. Smarter lending. A smoother experience. We find the right loan for you — We compare your goals with thousands of lending options across major banks and specialist lenders. We negotiate on your behalf — Our relationships with lenders help us secure sharper rates and tailored offers. We handle the paperwork — From application to settlement, we manage the details so you can focus on your home. Our service is free — You don’t pay us; the lender you choose pays our fee.",
+            icon: "ph:files",
+            iconAlt: "How SAI Finance Helps",
         },
     ],
     ctaTitle: "Ready to Apply for Your First Home Loan?",
     ctaSubtitle:
-        "Take the first step towards homeownership today",
+        "Take the first step towards homeownership today with expert guidance from SAI Finance.",
     ctaPrimaryText: "Apply Now",
     ctaSecondaryText: "Book Free Call",
 };

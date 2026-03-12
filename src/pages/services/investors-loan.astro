@@ -1,0 +1,92 @@
+
+---
+import Header from "../../components/Header.astro";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceLayout from "../../components/ServiceLayout.astro";
+
+const data = {
+    breadcrumb: ["Home", "Services", "Home Loan"],
+    heroTitle: "Home Loans Made Simple",
+    heroSubtitle:
+        "Expert guidance through every step of your home buying journey, from pre-approval to settlement.",
+    heroImage: "/img/services_hero.webp",
+    heroCtaPrimaryText: "Apply for Home Loan",
+    heroCtaSecondaryText: "Book a Free Call",
+    aboutTitle: "About This Service",
+    aboutText: [
+        "Buying your first home is an exciting milestone, but navigating the mortgage process can feel overwhelming. Our First Time Home Buyer service simplifies every step, from understanding your borrowing capacity to securing the best loan terms.",
+        "Our team specializes in helping first-time buyers understand their options, compare products, and make informed decisions. We handle the paperwork, negotiate on your behalf, and ensure you get the most favorable terms for your circumstances.",
+        "We work with over 60 lenders to find competitive rates and flexible options tailored to your financial situation. Whether you need guidance on deposit size, eligibility, or government assistance schemes — we’re here to help.",
+    ],
+    aboutImage: "/img/service_home.png",
+    benefits: [
+        "Access to 40+ lenders and competitive rates",
+        "Low deposit options for first home buyers",
+        "First Home Owner Grant assistance",
+        "Dedicated support throughout the process",
+    ],
+    calculators: [
+        {
+            title: "Calculate Your Borrowing Power",
+            description: "Find out how much you can borrow based on your income, expenses, and financial situation.",
+            href: "/calculator/borrowing-power-calculator",
+        },
+        {
+            title: "Calculate Repayment Options",
+            description: "Explore different repayment scenarios and find the loan structure that works best for your budget.",
+            href: "/calculator/loan-repayment-calculator",
+        },
+    ],
+    servicesTitle: "Our Loan Services",
+    servicesSubtitle:
+        "Comprehensive mortgage solutions designed to meet your unique financial needs and goals.",
+    services: [
+        {
+            title: "First Home Buyers",
+            description:
+                "Expert guidance for first-time home buyers with access to competitive rates and government schemes.",
+            icon: "ph:house-line",
+            iconAlt: "First Home Buyers",
+        },
+        {
+            title: "Refinancing",
+            description:
+                "Save money by refinancing your existing loan with better rates and terms tailored to your needs.",
+            icon: "ph:arrows-clockwise",
+            iconAlt: "Refinancing",
+        },
+        {
+            title: "Investment Properties",
+            description:
+                "Specialized lending solutions for property investors looking to expand their portfolio.",
+            icon: "ph:buildings",
+            iconAlt: "Investment Properties",
+        },
+        {
+            title: "Construction Loans",
+            description:
+                "Flexible construction loan options to help you build your dream home from the ground up.",
+            icon: "ph:hammer",
+            iconAlt: "Construction Loans",
+        },
+    ],
+    ctaTitle: "Ready to Apply for Your First Home Loan?",
+    ctaSubtitle:
+        "Take the first step towards homeownership today",
+    ctaPrimaryText: "Apply Now",
+    ctaSecondaryText: "Book Free Call",
+};
+---
+
+<Layout>
+    <Fragment slot="header">
+        <Header />
+    </Fragment>
+
+    <ServiceLayout {...data} />
+
+    <Fragment slot="footer">
+        <Footer />
+    </Fragment>
+</Layout>
