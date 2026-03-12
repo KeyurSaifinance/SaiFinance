@@ -51,13 +51,12 @@ import { Icon } from "astro-icon/components";
         </div>
     </section>
 
-
     <!-- section 2 -->
-    <section class="bg-[#f2f4f7] py-14 md:py-16 lg:py-20">
-        <div class="mx-auto max-w-6xl px-6 lg:px-6">
+    <section class="py-14 md:py-16 lg:py-20">
+        <div class="mx-auto max-w-6xl px-6 lg:px-6 md:px-14">
             <div class="text-center">
                 <h2
-                    class="font-Arial font-bold text-[34px] leading-[42px] text-primary sm:text-[42px] sm:leading-[52px]"
+                    class="font-Arial font-bold text-[30px] leading-[42px] text-primary lg:text-[40px] lg:leading-[52px]"
                 >
                     Explore Our Calculators
                 </h2>
@@ -75,11 +74,11 @@ import { Icon } from "astro-icon/components";
                 >
                     <div class="relative h-[180px]">
                         <img
-                            src="/img/home_loan_1.png"
+                            src="/img/home-loan.png"
                             alt="Loan Repayment Calculator"
                             class="h-full w-full object-cover"
                         />
-                        <div class="absolute inset-0 bg-[#1f3e6f]/55"></div>
+                        <!-- <div class="absolute inset-0 bg-[#1f3e6f]/55"></div> -->
                         <div
                             class="absolute bottom-[-30px] left-1/2 inline-flex h-[78px] w-[78px] -translate-x-1/2 items-center justify-center rounded-2xl border border-[#dbe4ef] bg-white text-primary shadow-md"
                         >
@@ -89,12 +88,17 @@ import { Icon } from "astro-icon/components";
 
                     <div class="px-6 pb-6 pt-12">
                         <h3
-                            class="font-Arial text-[32px] font-bold leading-[42px] text-primary sm:text-[37px] sm:leading-[48px]"
+                            class="font-Arial font-bold
+         text-[18px] lg:text-[25px] leading-[30px] tracking-normal
+         text-primary"
                         >
                             Loan Repayment Calculator
                         </h3>
                         <p
-                            class="mt-2 font-Arial text-[17px] leading-[30px] text-[#4f6178]"
+                            class="mt-2
+         font-dm-sans font-normal
+         text-[16px] leading-[22px] tracking-normal
+        text-[#4A5565]"
                         >
                             Estimate your monthly mortgage repayments based on
                             loan amount, interest rate, and loan term. This
@@ -109,7 +113,7 @@ import { Icon } from "astro-icon/components";
                         </p>
                         <ul class="mt-3 space-y-2">
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -119,7 +123,7 @@ import { Icon } from "astro-icon/components";
                                 Calculate monthly repayments
                             </li>
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -129,7 +133,7 @@ import { Icon } from "astro-icon/components";
                                 View total interest payable
                             </li>
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -155,11 +159,11 @@ import { Icon } from "astro-icon/components";
                 >
                     <div class="relative h-[180px]">
                         <img
-                            src="/img/service_img_2.webp"
+                            src="/img/borrowing.png"
                             alt="Borrowing Power Calculator"
                             class="h-full w-full object-cover"
                         />
-                        <div class="absolute inset-0 bg-[#1f3e6f]/55"></div>
+                        <!-- <div class="absolute inset-0 bg-[#1f3e6f]/55"></div> -->
                         <div
                             class="absolute bottom-[-30px] left-1/2 inline-flex h-[78px] w-[78px] -translate-x-1/2 items-center justify-center rounded-2xl border border-[#dbe4ef] bg-white text-primary shadow-md"
                         >
@@ -169,12 +173,17 @@ import { Icon } from "astro-icon/components";
 
                     <div class="px-6 pb-6 pt-12">
                         <h3
-                            class="font-Arial text-[32px] font-bold leading-[42px] text-primary sm:text-[37px] sm:leading-[48px]"
+                            class="font-Arial font-bold
+         text-[18px] lg:text-[25px] leading-[30px] tracking-normal
+         text-primary"
                         >
                             Borrowing Power Calculator
                         </h3>
                         <p
-                            class="mt-2 font-Arial text-[17px] leading-[30px] text-[#4f6178]"
+                            class="mt-2
+         font-dm-sans font-normal
+         text-[16px] leading-[22px] tracking-normal
+        text-[#4A5565]"
                         >
                             Find out how much you may be able to borrow based on
                             your income, expenses, and financial commitments.
@@ -187,7 +196,7 @@ import { Icon } from "astro-icon/components";
                         </p>
                         <ul class="mt-3 space-y-2">
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -197,7 +206,7 @@ import { Icon } from "astro-icon/components";
                                 Estimate borrowing capacity
                             </li>
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -207,7 +216,7 @@ import { Icon } from "astro-icon/components";
                                 Understand affordability
                             </li>
                             <li
-                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-[#4f6178]"
+                                class="flex items-center gap-2 font-Arial text-[17px] leading-[28px] text-primary"
                             >
                                 <Icon
                                     name="ph:check-circle"
@@ -220,7 +229,7 @@ import { Icon } from "astro-icon/components";
 
                         <a
                             href="/calculator/borrowing-power-calculator"
-                            class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 font-Arial text-[18px] font-bold text-white transition hover:opacity-90"
+                            class="mt-12 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 font-Arial text-[18px] font-bold text-white transition hover:opacity-90"
                         >
                             Check Borrowing Power
                             <Icon name="ph:arrow-right" size="16" />
@@ -231,7 +240,205 @@ import { Icon } from "astro-icon/components";
         </div>
     </section>
 
+    <!-- section 3 -->
+    <section class="pb-12 md:pb-16 lg:pb-20">
+        <div class="mx-auto max-w-6xl px-6 lg:px-6 md:px-14">
+            <div class="text-center">
+                <h2
+                    class="font-Arial font-bold text-[30px] leading-[42px] text-primary lg:text-[40px] lg:leading-[52px]"
+                >
+                    Plan Your Home Loan with Confidence
+                </h2>
+                <p
+                    class="mx-auto mt-3 max-w-3xl font-Arial text-[18px] leading-[30px] text-[#5c6f87]"
+                >
+                    Our calculators provide the insights you need to make
+                    informed financial decisions
+                </p>
+            </div>
 
+            <div
+                class="mt-10 grid gap-6 md:grid-cols-2 lg:mt-12 lg:grid-cols-3"
+            >
+                <article
+                    class="rounded-3xl border border-[#E5E7EB] px-6 py-8 text-center shadow-[0_10px_30px_-18px_rgba(15,33,71,0.35)]"
+                >
+                    <div
+                        class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_10px_20px_-10px_rgba(15,33,71,0.8)]"
+                    >
+                        <Icon name="ph:chart-bar" size="30" />
+                    </div>
+                    <h3
+                        class="mt-6 font-Arial text-[22px] font-bold leading-[42px] text-primary lg:text-[24px]"
+                    >
+                        Better Financial Planning
+                    </h3>
+                    <p
+                        class="lg:mt-4 font-Arial text-[18px] leading-[30px] text-[#4A5565]"
+                    >
+                        Understand your potential repayments before committing
+                        to a loan.
+                    </p>
+                </article>
+
+                <article
+                    class="rounded-3xl border border-[#d9e0ea] bg-white px-6 py-8 text-center shadow-[0_10px_30px_-18px_rgba(15,33,71,0.35)]"
+                >
+                    <div
+                        class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_10px_20px_-10px_rgba(15,33,71,0.8)]"
+                    >
+                        <Icon name="ph:lightbulb-filament" size="30" />
+                    </div>
+                    <h3
+                        class="mt-6 font-Arial text-[22px] font-bold leading-[42px] text-primary lg:text-[24px]"
+                    >
+                        Compare Loan Options
+                    </h3>
+                    <p
+                        class="lg:mt-4 font-Arial text-[18px] leading-[30px] text-[#4A5565]"
+                    >
+                        Explore different scenarios and loan structures easily.
+                    </p>
+                </article>
+
+                <article
+                    class="rounded-3xl border border-[#d9e0ea] bg-white px-6 py-8 text-center shadow-[0_10px_30px_-18px_rgba(15,33,71,0.35)] md:col-span-2 lg:col-span-1"
+                >
+                    <div
+                        class="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_10px_20px_-10px_rgba(15,33,71,0.8)]"
+                    >
+                        <Icon name="ph:users-three" size="30" />
+                    </div>
+                    <h3
+                        class="mt-6 font-Arial text-[22px] font-bold leading-[42px] text-primary lg:text-[24px]"
+                    >
+                        Make Informed Decisions
+                    </h3>
+                    <p
+                        class="lg:mt-4 font-Arial text-[18px] leading-[30px] text-[#4A5565]"
+                    >
+                        Get clarity before speaking with a mortgage advisor.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 4 -->
+    <section class="py-12 md:py-0 md:pb-10 lg:pb-8 lg:py-0">
+        <div
+            class="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-2 lg:items-center lg:gap-18 lg:px-6 md:px-14"
+        >
+            <div>
+                <img
+                    src="/img/service_img_2.png"
+                    alt="Loan Consultation"
+                    class="h-[260px] w-full rounded-2xl object-cover shadow-[0_20px_40px_-25px_rgba(15,33,71,0.45)] sm:h-[320px] lg:h-[400px]"
+                />
+            </div>
+
+            <div class="lg:max-w-[540px]">
+                <h2
+                    class="font-Arial font-bold text-[30px] leading-[42px] text-primary lg:text-[35px] lg:leading-[38px]"
+                >
+                    Expert Guidance Every Step of the Way
+                </h2>
+                <p
+                    class="mt-5 font-Arial text-[17px] leading-[30px] text-[#5C6F87] lg:text-[18px] lg:leading-[30px]"
+                >
+                    We guide you through each step of the home loan process. Our
+                    experienced advisors understand that every situation is
+                    unique, and we're here to help you make the best choice.
+                </p>
+
+                <ul class="mt-8 space-y-4">
+                    <li
+                        class="flex items-center gap-3 font-Arial text-[18px] text-[#364153] lg:text-[18px]"
+                    >
+                        <span
+                            class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white"
+                        >
+                            <Icon name="ph:check" size="16" />
+                        </span>
+                        Flexible product options
+                    </li>
+                    <li
+                        class="flex items-center gap-3 font-Arial text-[18px] text-[#364153] lg:text-[18px]"
+                    >
+                        <span
+                            class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white"
+                        >
+                            <Icon name="ph:check" size="16" />
+                        </span>
+                        24/48 hour pre-approval
+                    </li>
+                    <li
+                        class="flex items-center gap-3 font-Arial text-[18px] text-[#364153] lg:text-[18px]"
+                    >
+                        <span
+                            class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white"
+                        >
+                            <Icon name="ph:check" size="16" />
+                        </span>
+                        Dedicated loan specialist
+                    </li>
+                    <li
+                        class="flex items-center gap-3 font-Arial text-[18px] text-[#364153] lg:text-[18px]"
+                    >
+                        <span
+                            class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white"
+                        >
+                            <Icon name="ph:check" size="16" />
+                        </span>
+                        No application fee
+                    </li>
+                </ul>
+
+                <a
+                    href="/contact"
+                    class="mt-8 inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3 font-Arial text-[18px] font-bold text-white shadow-[0_12px_24px_-14px_rgba(15,33,71,0.9)] transition hover:opacity-90"
+                >
+                    Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 5 -->
+    <section class="bg-white pb-12 lg:py-10 lg:pb-20">
+        <div class="mx-auto max-w-6xl px-6 md:px-14 lg:px-6">
+            <div
+                class="rounded-4xl bg-primary px-6 py-10 text-center text-white shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] sm:px-10 sm:py-12 lg:px-16 lg:py-14"
+            >
+                <h2
+                    class="font-Arial text-[26px] font-bold sm:text-[32px] lg:text-[36px]"
+                >
+                    Need Help Understanding Your Numbers?
+                </h2>
+                <p
+                    class="mx-auto mt-3 max-w-2xl text-[14px] leading-[24px] text-white/80 sm:text-[16px] sm:leading-[26px]"
+                >
+                    Our finance specialists can guide you through your options
+                    and help you find the right loan solution.
+                </p>
+
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#1E3A6F] sm:text-[15px] w-[300px]"
+                    >
+                        Contact US &#8594;
+                    </a>
+                    <!-- <a
+                        href="calculator/borrowing-power-calculator"
+                        class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-[14px] font-semibold text-white sm:text-[15px] w-[300px]"
+                    >
+                        Calculate your borrowing power
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <Fragment slot="footer">
         <Footer />
