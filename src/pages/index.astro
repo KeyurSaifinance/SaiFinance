@@ -393,7 +393,7 @@ import CtaButton from "../components/CtaButton.astro";
 	<LogoSlider />
 
 	<!-- section 4 -->
-	<section class="bg-[#f6f7fb] pt-18 pb-10 px-6">
+	<section class="bg-[#f6f7fb] pt-18 pb-10">
 		<div class="mx-auto max-w-6xl px-6 lg:px-0 md:px-14 md:py-0">
 			<div
 				class="flex items-center gap-2 text-sm font-semibold text-[#0f2147]"
@@ -610,7 +610,7 @@ import CtaButton from "../components/CtaButton.astro";
 	</section>
 
 	<!-- section 5 -->
-	<section class="bg-[#F0F1F3] lg:py-18 py-10 px-6">
+	<section class="bg-[#F0F1F3] lg:py-18 py-10">
 		<div class="mx-auto max-w-6xl px-6 lg:px-0 md:px-14 md:py-0">
 			<div class="grid lg:gap-14 gap-10 lg:grid-cols-2 lg:items-center">
 				<div>
@@ -657,24 +657,21 @@ import CtaButton from "../components/CtaButton.astro";
 			</div>
 
 			<div
-				class="mt-12 grid lg:gap-4 gap-6 lg:grid-cols-[1fr_1fr_auto] lg:items-start"
+				class="mt-12 grid gap-6 lg:grid-cols-[minmax(0,390px)_minmax(0,390px)_auto] lg:items-stretch lg:gap-4"
 			>
-				<div class="grid gap-6 lg:w-[390px]">
+				<div class="grid gap-6">
 					<div
-						class="flex items-center gap-4 rounded-lg bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-18 h-10 w-15 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>1</span
 							>
 						</div>
 						<p
-							class="font-Poppins font-semibold
-         text-[16px] leading-[25.22px]
-         tracking-normal
-         text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
 							We have digitized the entire loan application
 							process
@@ -682,40 +679,34 @@ import CtaButton from "../components/CtaButton.astro";
 					</div>
 
 					<div
-						class="flex items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-13 h-10 w-8 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>2</span
 							>
 						</div>
 						<p
-							class="font-Poppins font-semibold
-         text-[16px] leading-[25.22px]
-         tracking-normal
-         text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
 							Secured digital forms
 						</p>
 					</div>
 
 					<div
-						class="flex items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-24 h-10 w-18 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>3</span
 							>
 						</div>
 						<p
-							class="font-Poppins font-semibold
-         text-[16px] leading-[25.22px]
-         tracking-normal
-         text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
 							Secured and encrypted data to ensure a secure
 							end-to-end loan process
@@ -723,59 +714,53 @@ import CtaButton from "../components/CtaButton.astro";
 					</div>
 				</div>
 
-				<div class="grid gap-6 lg:w-[400px]">
+				<div class="grid gap-6">
 					<div
-						class="flex items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-14 h-10 w-8 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>4</span
 							>
 						</div>
 						<p
-							class="font-Poppins font-semibold
-         text-[16px] leading-[25.22px]
-         tracking-normal
-         text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
 							Save loan application time
 						</p>
 					</div>
 
 					<div
-						class="flex items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-14 h-10 w-10 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>5</span
 							>
 						</div>
 						<p
-							class="font-dm-sans text-[16px] font-semibold text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
-							Pre-approvals approvals within an hours
-					</p>
+							Pre-approvals within an hour
+						</p>
 					</div>
 
 					<div
-						class="flex items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
+						class="flex min-h-[96px] items-center gap-4 rounded-2xl bg-[#DFE2E7] p-5"
 					>
 						<div
-							class="flex lg:h-12 lg:w-22 h-10 w-15 md:w-10 md:h-10 items-center justify-center rounded-lg bg-primary text-white"
+							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-white"
 						>
 							<span class="font-dm-sans text-[26px] font-semibold"
 								>6</span
 							>
 						</div>
 						<p
-							class="font-Poppins font-semibold
-         text-[16px] leading-[25.22px]
-         tracking-normal
-         text-primary"
+							class="font-Poppins text-[16px] font-semibold leading-[25.22px] tracking-normal text-primary"
 						>
 							Reduced loan processing time from weeks to just a
 							few days
@@ -783,28 +768,14 @@ import CtaButton from "../components/CtaButton.astro";
 					</div>
 				</div>
 
-				<div class="flex items-center justify-center lg:min-h-[320px]">
+				<div class="flex items-center justify-center lg:min-h-[324px]">
 					<a
 						href="/contact"
-						class="inline-flex items-center gap-3
-           rounded-full
-           border border-[#1d2d53]
-           bg-white
-           lg:px-6 px-2 py-2
-           font-dm-sans text-[14px] font-semibold
-           uppercase tracking-wide
-           text-[#1d2d53]
-           transition-all duration-200
-           hover:bg-[#1d2d53] hover:text-white"
+						class="group inline-flex items-center gap-3 rounded-full border border-[#1d2d53] bg-white px-5 py-2 font-dm-sans text-[14px] font-semibold uppercase tracking-wide text-[#1d2d53] transition-all duration-200 hover:bg-[#1d2d53] hover:text-white"
 					>
 						Apply Now
 						<span
-							class="inline-flex h-8 w-8 items-center justify-center
-             rounded-full
-             bg-[#1d2d53]
-             text-white
-             transition-all duration-200
-             group-hover:bg-white group-hover:text-[#1d2d53]"
+							class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1d2d53] text-white transition-all duration-200 group-hover:bg-white group-hover:text-[#1d2d53]"
 						>
 							&#8599;
 						</span>
