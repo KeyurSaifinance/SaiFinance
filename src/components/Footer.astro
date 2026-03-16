@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-primary text-white">
@@ -192,7 +193,7 @@ import { Icon } from "astro-icon/components";
             <p
                 class="font-Inter font-normal text-[18px] leading-[28px] tracking-normal text-white/70"
             >
-                Copyright © 2025 devstart. All rights reserved.
+                Copyright &copy; {currentYear} devstart. All rights reserved.
             </p>
 
             <div class="flex items-center gap-6">
