@@ -12,10 +12,16 @@ const isActive = (path) => {
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 border-b border-gray-200 bg-white">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 min-[700px]:px-8 md:px-10 lg:px-6">
+    <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 min-[700px]:px-8 md:px-10 lg:px-6"
+    >
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2">
-            <img src="/img/Sai-Finance-Logo.svg" alt="SAI Finance" class="w-[170px] min-[700px]:w-[210px] xl:w-[230px]" />
+            <img
+                src="/img/Sai-Finance-Logo.svg"
+                alt="SAI Finance"
+                class="w-[170px] min-[700px]:w-[210px] xl:w-[230px]"
+            />
         </a>
 
         <!-- Desktop Nav -->
@@ -36,7 +42,9 @@ const isActive = (path) => {
                     href="/services"
                     class:list={[
                         "flex items-center text-[17px]  leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins p-2",
-                        isActive("/services") ? "text-primary" : "text-[#9CABC3]",
+                        isActive("/services")
+                            ? "text-primary"
+                            : "text-[#9CABC3]",
                         isActive("/services") ? "font-bold" : "font-medium",
                     ]}
                 >
@@ -86,6 +94,12 @@ const isActive = (path) => {
                     >
                         Personal/Car Loan
                     </a>
+                    <a
+                        href="/services/asset-finance"
+                        class="block rounded-xl px-4 py-3 font-Arial text-[14px] font-semibold text-[#1E2E4A] hover:bg-[#F5F7FB]"
+                    >
+                       Asset Finance
+                    </a>
                 </div>
             </div>
             <div class="relative group">
@@ -93,7 +107,9 @@ const isActive = (path) => {
                     href="/calculator"
                     class:list={[
                         "flex items-center text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins p-2",
-                        isActive("/calculator") ? "text-primary" : "text-[#9CABC3]",
+                        isActive("/calculator")
+                            ? "text-primary"
+                            : "text-[#9CABC3]",
                         isActive("/calculator") ? "font-bold" : "font-medium",
                     ]}
                 >
@@ -127,8 +143,7 @@ const isActive = (path) => {
                     "text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins p-2",
                     isActive("/blog") ? "text-primary" : "text-[#9CABC3]",
                     isActive("/blog") ? "font-bold" : "font-medium",
-                ]}
-                >Blog</a
+                ]}>Blog</a
             >
             <a
                 href="/contact"
@@ -136,8 +151,7 @@ const isActive = (path) => {
                     "text-[17px] leading-[28.18px] tracking-normal hover:text-primary hover:opacity-80 font-Poppins p-2",
                     isActive("/contact") ? "text-primary" : "text-[#9CABC3]",
                     isActive("/contact") ? "font-bold" : "font-medium",
-                ]}
-                >Contact Us</a
+                ]}>Contact Us</a
             >
         </nav>
 
@@ -175,13 +189,18 @@ const isActive = (path) => {
     </div>
 
     <!-- Mobile Nav -->
-    <div class="xl:hidden hidden border-t border-gray-100 bg-white" data-mobile-menu>
+    <div
+        class="xl:hidden hidden border-t border-gray-100 bg-white"
+        data-mobile-menu
+    >
         <nav class="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4">
             <a
                 href="/"
                 class:list={[
                     "rounded-lg px-3 py-2 font-Poppins text-[16px] leading-[24px]",
-                    isActive("/") ? "text-primary font-semibold" : "text-[#9CABC3]",
+                    isActive("/")
+                        ? "text-primary font-semibold"
+                        : "text-[#9CABC3]",
                 ]}
             >
                 Home
@@ -217,7 +236,10 @@ const isActive = (path) => {
                         />
                     </button>
                 </div>
-                <div class="flex flex-col gap-1 pl-3 hidden" data-submenu-panel="services">
+                <div
+                    class="flex flex-col gap-1 pl-3 hidden"
+                    data-submenu-panel="services"
+                >
                     <a
                         href="/services/home-loan"
                         class="rounded-lg px-3 py-2 font-Arial text-[14px] font-semibold text-[#1E2E4A]"
@@ -287,7 +309,10 @@ const isActive = (path) => {
                         />
                     </button>
                 </div>
-                <div class="flex flex-col gap-1 pl-3 hidden" data-submenu-panel="calculator">
+                <div
+                    class="flex flex-col gap-1 pl-3 hidden"
+                    data-submenu-panel="calculator"
+                >
                     <a
                         href="/calculator/borrowing-power-calculator"
                         class="rounded-lg px-3 py-2 font-Arial text-[14px] font-semibold text-[#1E2E4A]"
@@ -307,7 +332,9 @@ const isActive = (path) => {
                 href="/blog"
                 class:list={[
                     "rounded-lg px-3 py-2 font-Poppins text-[16px] leading-[24px]",
-                    isActive("/blog") ? "text-primary font-semibold" : "text-[#9CABC3]",
+                    isActive("/blog")
+                        ? "text-primary font-semibold"
+                        : "text-[#9CABC3]",
                 ]}
             >
                 Blog
