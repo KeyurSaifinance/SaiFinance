@@ -1,53 +1,55 @@
----
+﻿---
 const testimonials = [
     {
         name: "Dahly Padillo",
+        avatar: "/img/Dahly.png",
         meta: "5 reviews | 0 photos",
         date: "28 weeks ago",
         rating: 5,
-        quote: "Four years ago I consulted Keyur regarding our loan application. He provided advice and insights on how we could prepare and be ready when the right time came. Four years later, I reached out again and he was an absolute legend in guiding us to achieve our goals. Communication is excellent, no question is silly, responses are prompt, and the process stayed smooth with minimal stress. Andrew and I are forever grateful for his help securing our first home.",
+        quote: "Four years ago I consulted Keyur regarding our loan application. He has provided advise and insight on how we can prepare and be ready for when the right time comes. 4 years after, I reached out to Keyur again to explore our options and he has been an absolute legend in guiding us to achieve our goals. Communication is excellent and he would bend forward and back to schedule our meeting with our work schedules. No questions are silly, prompt responses, clear insights and advise provided and he is very honest and upfront, this made our loan application smooth and minimal stress! Thank you Keyur! Andrew and I are forever grateful for you in helping us secure our first home!",
     },
     {
         name: "Jay Arnold Balanay",
         meta: "2 reviews | 0 photos",
         date: "49 weeks ago",
         rating: 5,
-        quote: "I recently purchased my second home with the help of Keyur (KB), and I could not be happier with the experience. From start to finish, everything was smooth, stress-free, and efficient. His expertise in loan options, rates, and paperwork made a huge difference. If you are looking for a knowledgeable and trustworthy mortgage broker, I highly recommend Keyur Bandhara.",
-    },
-    {
+        quote: "I recently purchased my second home with the help of Keyur( KB), and I couldn't be happier with the experience! From start to finish, they made the process smooth, stress-free, and incredibly efficient. Their expertise in navigating loan options, securing the best rates, and handling all the paperwork made a huge difference.\n\nWhat stood out the most was their dedication, clear communication, and willingness to go the extra mile to ensure everything went smoothly. If you're looking for a knowledgeable and trustworthy mortgage broker, I highly recommend- Keyur Bandhara (KB)-I wouldn't go anywhere else!",
+    },{
         name: "Melissa Barnett",
         meta: "1 review | 0 photos",
         date: "50 weeks ago",
         rating: 5,
-        quote: "My husband and I worked with Keyur for our new land finance and found him very helpful, friendly, and thoughtful. We had an amazing experience and would definitely recommend him.",
+        quote: "My Husband and I just went through Keyur Bandhara for our new land finance and we found him to be very helpful, friendly and thoughtful. We had an amazing experience working with him, we would definitely recommend him",
     },
     {
         name: "Cory Ragobert",
         meta: "2 reviews | 0 photos",
         date: "6 Mar 2025",
         rating: 5,
-        quote: "We had the pleasure of working with KB to secure our home loan for our dream house, and his service was exceptional. He went above and beyond to keep the application process seamless and stress-free. His communication was prompt, he was flexible with meetings, and he explained each step clearly so we always felt confident.",
+        quote: "We recently had the pleasure of working with KB to secure our home loan for our dream house, and we can't speak highly enough of his outstanding service!.\n\nKB went above and beyond to ensure that our loan application process was seamless and stress-free. His super-friendly demeanor, prompt communication (even on holidays!), and flexibility to meet at a time and location that suited us were truly impressive.\n\nKB's expertise and knowledge of the loan process were evident throughout our interactions. He took the time to explain everything clearly, addressed all our concerns, and made sure we understood each step of the way.",
     },
     {
         name: "Dominic Ong",
+        avatar: "/img/Dominic-Ong.png",
         meta: "Local Guide | 23 reviews | 70 photos",
         date: "11 Nov 2024",
         rating: 5,
-        quote: "From our initial meeting to settlement, KB's communication, engagement, and self-service portal made everything easy to follow. His mortgage and credit-processing knowledge was key to a smooth purchase. I have completed two home purchases and one refinance with KB in less than two years, and each experience was easy.",
+        quote: "From our initial meeting to settlement, KB's communication, engagement, and self-service portal made the experience so easy to follow and understand.\n\nHis knowledge in mortgages and understanding of credit processing was key to a smooth purchase. I would recommend KB to anyone who is purchasing locally in WA, or across state borders.\n\nI have now completed 2 new home purchases and 1 refinance with KB within a span of less than 2 years, and he has made the experience super easy.",
     },
     {
         name: "Lance Dionisio",
+        avatar: "/img/Lance.png",
         meta: "8 reviews | 3 photos",
         date: "2 May 2024",
         rating: 5,
-        quote: "KB was recommended by a close friend and he has been extremely helpful. He showed dedication and commitment that enabled us to secure our goals. We have recommended him to our whole family and are very thankful for his support.",
+        quote: "KB like most people here have been recommended to us by a close friend. Me and wife find KB’s services to be extremely helpful. He has shown us dedication and commitment which enabled us to secure our goals. We have now recommended his services to our entire family. He is truly someone who you can rely on and is someone who will see your dreams come truly. We are very thankful and would highly recommend him to anyone in a heartbeat.",
     },
     {
         name: "Sumit Sharma",
         meta: "3 reviews | 0 photos",
         date: "6 Mar 2024",
         rating: 5,
-        quote: "My wife and I recently bought our first home with the help of Keyur at Sai Finance and could not be happier. He made a stressful process smooth, answered all questions clearly, and explained everything in a way that was easy to understand. I highly recommend Sai Finance and will definitely return for future finance assistance.",
+        quote: "My Wife and I recently bought my first home with the help of Keyur at Sai Finance and couldn’t be happier with the whole process! He made what would have been a very stressful experience smooth. Keyur has been very accommodating with all our questions and explain everything the way we can easily understand.",
     },
 ];
 ---
@@ -91,18 +93,29 @@ const testimonials = [
                         <article
                             data-testimonial-slide
                             class:list={[
-                                "flex flex-col rounded-[24px] border border-[#DFE8F4] bg-[#DFE2E7] p-5 shadow-[0_20px_55px_-40px_rgba(15,40,71,0.45)] transition-all duration-300 lg:p-9 md:h-[380px]",
+                                "flex flex-col rounded-[24px] border border-[#DFE8F4] bg-[#DFE2E7] p-5 shadow-[0_20px_55px_-40px_rgba(15,40,71,0.45)] transition-all duration-300 lg:p-9 md:h-[530px]",
                                 index === 0 ? "block" : "hidden",
                             ]}
                         >
                             <div class="flex items-center justify-between gap-3">
-                                <div class="inline-flex items-center gap-3 rounded-full bg-[#F4F7FC] px-3 py-2">
-                                    <span
-                                        class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#E8EFFA] font-Poppins text-[13px] font-semibold text-[#102245]"
-                                        aria-hidden="true"
-                                    >
-                                        {initials}
-                                    </span>
+                                <div class="inline-flex items-center gap-3 rounded-full px-3 py-2">
+                                    {
+                                        item.avatar ? (
+                                            <img
+                                                src={item.avatar}
+                                                alt={item.name}
+                                                class="h-15 w-15 rounded-full object-cover ring-2 ring-white/90"
+                                                loading="lazy"
+                                            />
+                                        ) : (
+                                            <span
+                                                class="inline-flex h-15 w-15 items-center justify-center rounded-full bg-[#E8EFFA] font-Poppins text-[13px] font-semibold text-[#102245]"
+                                                aria-hidden="true"
+                                            >
+                                                {initials}
+                                            </span>
+                                        )
+                                    }
                                 </div>
                                 <div
                                     class="flex items-center gap-1 text-[20px] text-[#F59E0B]"
@@ -117,7 +130,7 @@ const testimonials = [
                             </div>
 
                             <div class="mt-4 flex-1 overflow-y-auto pr-1 text-left">
-                                <p class="font-Arial text-[16px] leading-[28px] text-[#213454] lg:text-[17px] lg:leading-[30px]">
+                                <p class="whitespace-pre-line font-Arial text-[16px] leading-[28px] text-[#213454] lg:text-[17px] lg:leading-[30px]">
                                     {item.quote}
                                 </p>
                             </div>
@@ -271,3 +284,4 @@ const testimonials = [
         }
     }
 </script>
+
