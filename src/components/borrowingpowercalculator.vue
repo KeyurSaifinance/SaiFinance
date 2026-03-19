@@ -408,12 +408,20 @@
             back within 24-48 hours to help keep your application moving.
           </p>
 
-          <a
-            class="mt-5 inline-flex min-h-[42px] items-center justify-center border border-[#00843d] bg-[#00843d] px-5 text-[12px] font-bold text-white transition hover:bg-[#006f34]"
-            href="/contact"
-          >
-            Apply online now
-          </a>
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <a
+              class="inline-flex min-h-[42px] items-center rounded justify-center border border-[#00843d] bg-[#00843d] px-5 text-[12px] font-bold text-white transition hover:bg-[#006f34]"
+              href="/contact"
+            >
+              Apply online now
+            </a>
+            <a
+              class="inline-flex min-h-[42px] items-center justify-center rounded border border-primary bg-white px-5 text-[12px] font-bold text-primary transition hover:bg-[#eef2f5]"
+              href="/contact"
+            >
+              Book Free Consultation Call
+            </a>
+          </div>
         </section>
       </div>
 
