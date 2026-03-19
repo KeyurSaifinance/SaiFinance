@@ -21,8 +21,13 @@ export interface DetailSection {
     points?: string[];
 }
 
+export interface BreadcrumbItem {
+    label: string;
+    href?: string;
+}
+
 export interface Props {
-    breadcrumb?: string[];
+    breadcrumb?: Array<string | BreadcrumbItem>;
     heroTitle: string;
     heroSubtitle: string;
     heroImage: string;
@@ -54,7 +59,11 @@ export interface Props {
 }
 
 const {
-    breadcrumb = ["Home", "Services", "Home Loan"],
+    breadcrumb = [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Home Loan" },
+    ],
     heroTitle,
     heroSubtitle,
     heroImage,
@@ -84,6 +93,10 @@ const {
     ctaSecondaryText,
     ctaSecondaryHref = "/contact",
 } = Astro.props;
+
+const normalizedBreadcrumb = breadcrumb.map((item) =>
+    typeof item === "string" ? { label: item } : item
+);
 ---
 
 <!-- Hero -->
@@ -105,10 +118,30 @@ const {
             class="flex items-center gap-3 font-Arial text-[14px] leading-[20px] text-white/80"
         >
             {
-                breadcrumb.map((item, index) => (
+                normalizedBreadcrumb.map((item, index) => (
                     <>
                         {index > 0 && <span class="text-white/50">&#62;</span>}
-                        <span>{item}</span>
+                        {
+                            item.href && index < normalizedBreadcrumb.length - 1 ? (
+                                <a
+                                    href={item.href}
+                                    class="transition-colors hover:text-white"
+                                >
+                                    {item.label}
+                                </a>
+                            ) : (
+                                <span
+                                    aria-current={index === normalizedBreadcrumb.length - 1
+                                        ? "page"
+                                        : undefined}
+                                    class={index === normalizedBreadcrumb.length - 1
+                                        ? "text-white"
+                                        : undefined}
+                                >
+                                    {item.label}
+                                </span>
+                            )
+                        }
                     </>
                 ))
             }

@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Home", "Services", "Personal & Car Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Personal & Car Loan" },
+    ],
     heroTitle: "Personal & Car Loan",
     heroSubtitle:
         "Simple, flexible finance for the things that matter.",

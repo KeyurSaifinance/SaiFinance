@@ -5,11 +5,15 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Construction", "Services", "Construction Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Construction Loan" },
+    ],
     heroTitle: "Construction Loan",
     heroSubtitle:
         "Finance designed for building, renovating, or creating your next home from the ground up.",
-    heroImage: "/img/services_hero.webp",
+    heroImage: "/img/construction-loan.webp",
     heroCtaPrimaryText: "Apply for Home Loan",
     heroCtaSecondaryText: "Book a Free Call",
     aboutTitle: "Construction Loans",

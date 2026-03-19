@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["SMSF Loans", "Services", "SMSF Loans"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "SMSF Loan" },
+    ],
     heroTitle: "SMSF Loan",
     heroSubtitle:
         "Invest in property through your Self‑Managed Super Fund with confidence and clarity.",

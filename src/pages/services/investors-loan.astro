@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Investors", "Services", "Investors Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Investors Loan" },
+    ],
     heroTitle: "Investors Loan",
     heroSubtitle:
         "Build long‑term wealth with a lending partner who understands strategy, risk, and opportunity.",

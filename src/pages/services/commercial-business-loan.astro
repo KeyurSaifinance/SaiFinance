@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Commercial & Business Loan", "Services", "Commercial & Business Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Commercial & Business Loan" },
+    ],
     heroTitle: "Commercial & Business Loan",
     heroSubtitle:
         "Finance that helps your business grow, expand, and operate with confidence.",

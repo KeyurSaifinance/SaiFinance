@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Home", "Services", "Asset Finance Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Asset Finance Loan" },
+    ],
     heroTitle: "Asset Finance Loan",
     heroSubtitle:
         "Asset finance helps businesses access the equipment, vehicles, and tools they need without tying up cash flow.",

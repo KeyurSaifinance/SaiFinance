@@ -5,7 +5,11 @@ import Footer from "../../components/Footer.astro";
 import ServiceLayout from "../../components/ServiceLayout.astro";
 
 const data = {
-    breadcrumb: ["Home", "Services", "Home Loan"],
+    breadcrumb: [
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Home Loan" },
+    ],
     heroTitle: "Home Loan",
     heroSubtitle:
         "Your journey to owning a home starts with clarity, confidence, and the right lending partner.",
