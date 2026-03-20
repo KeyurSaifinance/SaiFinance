@@ -10,43 +10,25 @@
           <label class="text-sm text-gray-600">Property type</label>
 
           <div class="mb-6 mt-2 flex flex-wrap gap-3">
-            <button
-              class="rounded border px-6 py-2"
-              :class="
-                form.propertyType === 'owner_occupier'
-                  ? 'border-primary bg-primary text-white'
-                  : 'border-gray-300 bg-white text-gray-700'
-              "
-              type="button"
-              @click="form.propertyType = 'owner_occupier'"
-            >
+            <button class="rounded border px-6 py-2" :class="form.propertyType === 'owner_occupier'
+              ? 'border-primary bg-primary text-white'
+              : 'border-gray-300 bg-white text-gray-700'
+              " type="button" @click="form.propertyType = 'owner_occupier'">
               Owner occupier
             </button>
 
-            <button
-              class="rounded border px-6 py-2"
-              :class="
-                form.propertyType === 'investment'
-                  ? 'border-primary bg-primary text-white'
-                  : 'border-gray-300 bg-white text-gray-700'
-              "
-              type="button"
-              @click="form.propertyType = 'investment'"
-            >
+            <button class="rounded border px-6 py-2" :class="form.propertyType === 'investment'
+              ? 'border-primary bg-primary text-white'
+              : 'border-gray-300 bg-white text-gray-700'
+              " type="button" @click="form.propertyType = 'investment'">
               Residential investment
             </button>
           </div>
 
           <label class="text-sm text-gray-600">Loan amount</label>
 
-          <input
-            v-model.number="form.loanAmount"
-            type="number"
-            min="20000"
-            max="9900000"
-            step="1000"
-            class="mb-2 mt-2 w-full rounded border p-3"
-          />
+          <input v-model.number="form.loanAmount" type="number" min="20000" max="9900000" step="1000"
+            class="mb-2 mt-2 w-full rounded border p-3" />
 
           <p class="mb-6 text-xs text-gray-500">
             Minimum $20,000. Maximum $9,900,000.
@@ -55,44 +37,25 @@
           <label class="text-sm text-gray-600">Variable or fixed rate</label>
 
           <div class="mb-6 mt-2 flex flex-wrap gap-3">
-            <button
-              class="rounded border px-6 py-2"
-              :class="
-                form.rateType === 'variable'
-                  ? 'border-primary bg-primary text-white'
-                  : 'border-gray-300 bg-white text-gray-700'
-              "
-              type="button"
-              @click="form.rateType = 'variable'"
-            >
+            <button class="rounded border px-6 py-2" :class="form.rateType === 'variable'
+              ? 'border-primary bg-primary text-white'
+              : 'border-gray-300 bg-white text-gray-700'
+              " type="button" @click="form.rateType = 'variable'">
               Variable
             </button>
 
-            <button
-              class="rounded border px-6 py-2"
-              :class="
-                form.rateType === 'fixed'
-                  ? 'border-primary bg-primary text-white'
-                  : 'border-gray-300 bg-white text-gray-700'
-              "
-              type="button"
-              @click="form.rateType = 'fixed'"
-            >
+            <button class="rounded border px-6 py-2" :class="form.rateType === 'fixed'
+              ? 'border-primary bg-primary text-white'
+              : 'border-gray-300 bg-white text-gray-700'
+              " type="button" @click="form.rateType = 'fixed'">
               Fixed
             </button>
           </div>
 
           <label class="text-sm text-gray-600">Payment type</label>
 
-          <select
-            v-model="form.paymentType"
-            class="mb-6 mt-2 w-full rounded border p-3"
-          >
-            <option
-              v-for="option in paymentTypeOptions"
-              :key="option.value"
-              :value="option.value"
-            >
+          <select v-model="form.paymentType" class="mb-6 mt-2 w-full rounded border p-3">
+            <option v-for="option in paymentTypeOptions" :key="option.value" :value="option.value">
               {{ option.label }}
             </option>
           </select>
@@ -103,41 +66,20 @@
                 {{ interestRateLabel }}
               </label>
 
-              <button
-                class="text-sm font-medium text-primary"
-                type="button"
-                @click="toggleCustomRate"
-              >
+              <button class="text-sm font-medium text-primary" type="button" @click="toggleCustomRate">
                 {{ form.useCustomRate ? 'Choose an ANZ rate' : 'Enter my own interest rate' }}
               </button>
             </div>
 
             <template v-if="form.useCustomRate">
-              <input
-                v-model="form.customRate"
-                type="number"
-                min="0"
-                max="30"
-                step="0.01"
-                placeholder="%"
-                class="mt-2 w-full rounded border p-3"
-              />
+              <input v-model="form.customRate" type="number" min="0" max="30" step="0.01" placeholder="%"
+                class="mt-2 w-full rounded border p-3" />
 
-              <div
-                v-if="showCustomFixedPeriod"
-                class="mt-4"
-              >
+              <div v-if="showCustomFixedPeriod" class="mt-4">
                 <label class="text-sm text-gray-600">Fixed period</label>
 
-                <select
-                  v-model.number="form.customFixedTermYears"
-                  class="mt-2 w-full rounded border p-3"
-                >
-                  <option
-                    v-for="year in customFixedPeriodOptions"
-                    :key="year"
-                    :value="year"
-                  >
+                <select v-model.number="form.customFixedTermYears" class="mt-2 w-full rounded border p-3">
+                  <option v-for="year in customFixedPeriodOptions" :key="year" :value="year">
                     {{ year }} {{ year === 1 ? 'year' : 'years' }}
                   </option>
                 </select>
@@ -149,19 +91,12 @@
             </template>
 
             <template v-else>
-              <select
-                v-model="form.selectedRateId"
-                class="mt-2 w-full rounded border p-3"
-              >
+              <select v-model="form.selectedRateId" class="mt-2 w-full rounded border p-3">
                 <option value="">
                   Please select
                 </option>
 
-                <option
-                  v-for="option in availableRateOptions"
-                  :key="option.id"
-                  :value="option.id"
-                >
+                <option v-for="option in availableRateOptions" :key="option.id" :value="option.id">
                   {{ option.label }}
                 </option>
               </select>
@@ -175,25 +110,15 @@
 
           <label class="text-sm text-gray-600">Loan period in years</label>
 
-          <select
-            v-model.number="form.loanYears"
-            class="mb-8 mt-2 w-full rounded border p-3"
-          >
-            <option
-              v-for="year in yearOptions"
-              :key="year"
-              :value="year"
-            >
+          <select v-model.number="form.loanYears" class="mb-8 mt-2 w-full rounded border p-3">
+            <option v-for="year in yearOptions" :key="year" :value="year">
               {{ year }}
             </option>
           </select>
 
           <div class="flex flex-wrap gap-3">
-            <button
-              class="min-w-[220px] flex-1 rounded bg-primary py-3 font-semibold text-white"
-              type="button"
-              @click="calculate"
-            >
+            <button class="min-w-[220px] flex-1 rounded bg-primary py-3 font-semibold text-white" type="button"
+              @click="calculate">
               Calculate my payments
             </button>
 
@@ -207,173 +132,177 @@
           </div>
         </div>
 
-        <div class="rounded-xl shadow-sm bg-[#eef2f5] p-8">
-          <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-            <h2 class="text-2xl font-semibold text-primary">
-              Your estimated repayments
-            </h2>
+        <div>
+          <div class="rounded-xl shadow-sm bg-[#eef2f5] p-8">
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+              <h2 class="text-2xl font-semibold text-primary">
+                Your estimated repayments
+              </h2>
 
-            <select
-              v-model="form.frequency"
-              class="rounded border px-3 py-2"
-            >
-              <option value="Monthly">
-                Monthly
-              </option>
-              <option value="Fortnightly">
-                Fortnightly
-              </option>
-              <option value="Weekly">
-                Weekly
-              </option>
-            </select>
-          </div>
-
-          <h3 class="mb-8 text-5xl font-bold text-primary">
-            {{ formatCurrency(result.amount) }}
-          </h3>
-
-          <div
-            v-if="result.transitionMessage"
-            class="mb-6 rounded-lg bg-blue-50 p-4 text-sm text-gray-700"
-          >
-            {{ result.transitionMessage }}
-          </div>
-
-          <div class="space-y-4 text-gray-600">
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Interest rate</span>
-              <span class="text-right">{{ result.showRate }}</span>
+              <select v-model="form.frequency" class="rounded border px-3 py-2">
+                <option value="Monthly">
+                  Monthly
+                </option>
+                <option value="Fortnightly">
+                  Fortnightly
+                </option>
+                <option value="Weekly">
+                  Weekly
+                </option>
+              </select>
             </div>
 
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Comparison rate</span>
-              <span class="text-right">{{ result.showComparisonRate }}</span>
-            </div>
-
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Interest rate type</span>
-              <span class="text-right">{{ rateTypeLabels[form.rateType] }}</span>
-            </div>
-
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Payment type</span>
-              <span class="text-right">{{ selectedPaymentTypeLabel }}</span>
-            </div>
-
-            <div
-              v-if="showFixedPeriodRow"
-              class="flex justify-between gap-4 border-b pb-2"
-            >
-              <span>Fixed period</span>
-              <span class="text-right">
-                {{ activeFixedPeriodYears }} {{ activeFixedPeriodYears === 1 ? 'year' : 'years' }}
-              </span>
-            </div>
-
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Loan period</span>
-              <span class="text-right">{{ form.loanYears }} years</span>
-            </div>
-
-            <div class="flex justify-between gap-4 border-b pb-2">
-              <span>Property type</span>
-              <span class="text-right">{{ propertyTypeLabels[form.propertyType] }}</span>
-            </div>
-          </div>
-
-          <div class="mt-8 flex flex-wrap gap-3">
-            <button
-              class="rounded border border-primary px-4 py-2 font-medium text-primary disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
-              :disabled="!result.hasCalculated"
-              type="button"
-              @click="saveScenario"
-            >
-              Add a new scenario
-            </button>
-
-            <button
-              class="rounded border border-gray-300 px-4 py-2 font-medium text-gray-700"
-              type="button"
-              @click="resetCalculator"
-            >
-              Start over
-            </button>
-          </div>
-
-          <div
-            v-if="savedScenarios.length"
-            class="mt-8 border-t pt-6"
-          >
-            <h3 class="text-lg font-semibold text-primary">
-              Saved comparison scenarios
+            <h3 class="mb-8 text-5xl font-bold text-primary">
+              {{ formatCurrency(result.amount) }}
             </h3>
 
-            <div class="mt-4 grid gap-4">
-              <article
-                v-for="scenario in savedScenarios"
-                :key="scenario.id"
-                class="rounded-lg border border-slate-200 bg-slate-50 p-4"
-              >
-                <div class="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <p class="text-sm font-medium text-slate-500">
-                      Scenario {{ scenario.id }}
-                    </p>
-                    <h4 class="text-2xl font-bold text-primary">
-                      {{ formatCurrency(scenario.amount) }}
-                    </h4>
-                    <p class="text-sm text-slate-500">
-                      {{ scenario.frequency }}
-                    </p>
+            <div v-if="result.transitionMessage" class="mb-6 rounded-lg bg-blue-50 p-4 text-sm text-gray-700">
+              {{ result.transitionMessage }}
+            </div>
+
+            <div class="space-y-4 text-gray-600">
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Interest rate</span>
+                <span class="text-right">{{ result.showRate }}</span>
+              </div>
+
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Comparison rate</span>
+                <span class="text-right">{{ result.showComparisonRate }}</span>
+              </div>
+
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Interest rate type</span>
+                <span class="text-right">{{ rateTypeLabels[form.rateType] }}</span>
+              </div>
+
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Payment type</span>
+                <span class="text-right">{{ selectedPaymentTypeLabel }}</span>
+              </div>
+
+              <div v-if="showFixedPeriodRow" class="flex justify-between gap-4 border-b pb-2">
+                <span>Fixed period</span>
+                <span class="text-right">
+                  {{ activeFixedPeriodYears }} {{ activeFixedPeriodYears === 1 ? 'year' : 'years' }}
+                </span>
+              </div>
+
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Loan period</span>
+                <span class="text-right">{{ form.loanYears }} years</span>
+              </div>
+
+              <div class="flex justify-between gap-4 border-b pb-2">
+                <span>Property type</span>
+                <span class="text-right">{{ propertyTypeLabels[form.propertyType] }}</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <button
+                class="rounded border border-primary px-4 py-2 font-medium text-primary disabled:cursor-not-allowed disabled:border-gray-300 disabled:text-gray-400"
+                :disabled="!result.hasCalculated" type="button" @click="saveScenario">
+                Add a new scenario
+              </button>
+
+              <button class="rounded border border-gray-300 px-4 py-2 font-medium text-gray-700" type="button"
+                @click="resetCalculator">
+                Start over
+              </button>
+            </div>
+
+            <div v-if="savedScenarios.length" class="mt-8 border-t pt-6">
+              <h3 class="text-lg font-semibold text-primary">
+                Saved comparison scenarios
+              </h3>
+
+              <div class="mt-4 grid gap-4">
+                <article v-for="scenario in savedScenarios" :key="scenario.id"
+                  class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm font-medium text-slate-500">
+                        Scenario {{ scenario.id }}
+                      </p>
+                      <h4 class="text-2xl font-bold text-primary">
+                        {{ formatCurrency(scenario.amount) }}
+                      </h4>
+                      <p class="text-sm text-slate-500">
+                        {{ scenario.frequency }}
+                      </p>
+                    </div>
+
+                    <button class="text-sm font-medium text-slate-500" type="button"
+                      @click="removeScenario(scenario.id)">
+                      Remove
+                    </button>
                   </div>
 
-                  <button
-                    class="text-sm font-medium text-slate-500"
-                    type="button"
-                    @click="removeScenario(scenario.id)"
-                  >
-                    Remove
-                  </button>
-                </div>
+                  <dl class="mt-4 space-y-2 text-sm text-slate-600">
+                    <div class="flex justify-between gap-4">
+                      <dt>Interest rate</dt>
+                      <dd class="text-right">{{ scenario.showRate }}</dd>
+                    </div>
 
-                <dl class="mt-4 space-y-2 text-sm text-slate-600">
-                  <div class="flex justify-between gap-4">
-                    <dt>Interest rate</dt>
-                    <dd class="text-right">{{ scenario.showRate }}</dd>
-                  </div>
+                    <div class="flex justify-between gap-4">
+                      <dt>Comparison rate</dt>
+                      <dd class="text-right">{{ scenario.showComparisonRate }}</dd>
+                    </div>
 
-                  <div class="flex justify-between gap-4">
-                    <dt>Comparison rate</dt>
-                    <dd class="text-right">{{ scenario.showComparisonRate }}</dd>
-                  </div>
+                    <div class="flex justify-between gap-4">
+                      <dt>Type</dt>
+                      <dd class="text-right">{{ scenario.rateType }}</dd>
+                    </div>
 
-                  <div class="flex justify-between gap-4">
-                    <dt>Type</dt>
-                    <dd class="text-right">{{ scenario.rateType }}</dd>
-                  </div>
+                    <div class="flex justify-between gap-4">
+                      <dt>Payment</dt>
+                      <dd class="text-right">{{ scenario.paymentType }}</dd>
+                    </div>
 
-                  <div class="flex justify-between gap-4">
-                    <dt>Payment</dt>
-                    <dd class="text-right">{{ scenario.paymentType }}</dd>
-                  </div>
+                    <div class="flex justify-between gap-4">
+                      <dt>Property</dt>
+                      <dd class="text-right">{{ scenario.propertyType }}</dd>
+                    </div>
+                  </dl>
 
-                  <div class="flex justify-between gap-4">
-                    <dt>Property</dt>
-                    <dd class="text-right">{{ scenario.propertyType }}</dd>
-                  </div>
-                </dl>
-
-                <p
-                  v-if="scenario.transitionMessage"
-                  class="mt-3 text-xs text-slate-500"
-                >
-                  {{ scenario.transitionMessage }}
-                </p>
-              </article>
+                  <p v-if="scenario.transitionMessage" class="mt-3 text-xs text-slate-500">
+                    {{ scenario.transitionMessage }}
+                  </p>
+                </article>
+              </div>
             </div>
           </div>
+          <div class="mt-10 rounded-xl shadow-sm bg-[#eef2f5] p-8">
+            <section>
+              <h2 class="text-[30px] font-normal leading-none text-primary">
+                What&apos;s next?
+              </h2>
+
+              <p class="mt-3 text-[12px] leading-5 text-[#24374c]">
+                In under 5 minutes, you can get your application started for pre-approval, a new home
+                loan, refinancing, or topping up your existing home loan.
+              </p>
+              <p class="mt-3 text-[12px] leading-5 text-[#24374c]">
+                Tell us a bit about yourself and the loan you&apos;d like, then we&apos;ll call you
+                back within 24-48 hours to help keep your application moving.
+              </p>
+
+              <div class="mt-5 flex flex-wrap items-center gap-3">
+                <a class="inline-flex min-h-[42px] items-center rounded justify-center border border-[#00843d] bg-[#00843d] px-5 text-[12px] font-bold text-white transition hover:bg-[#006f34]"
+                  href="/contact">
+                  Apply online now
+                </a>
+                <a class="inline-flex min-h-[42px] items-center justify-center rounded border border-primary bg-white px-5 text-[12px] font-bold text-primary transition hover:bg-[#eef2f5]"
+                  href="/contact">
+                  Book Free Consultation Call
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
+
+
       </div>
     </div>
   </section>
