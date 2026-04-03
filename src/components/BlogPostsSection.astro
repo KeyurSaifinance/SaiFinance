@@ -1,7 +1,7 @@
 ---
 import { fetchPosts, getFeaturedImageUrl } from "../lib/wp";
 
-const posts = await fetchPosts({ per_page: 4 });
+const posts = await fetchPosts();
 
 const stripHtml = (html: string) => html.replace(/<[^>]*>/g, "").trim();
 const words = (text: string) => text.split(/\s+/).filter(Boolean).length;
@@ -42,7 +42,7 @@ const getPrimaryCategory = (post: any) =>
                                 </div>
                                 <h3 class="mt-4 font-Arial font-bold text-[20px] leading-[30px] tracking-[0px] text-[#1E3A5F]">
 
-                                    <a href={`/blog/${post.slug}`}>
+                                    <a href={/blog/${post.slug}}>
                                         {stripHtml(post.title.rendered)}
                                     </a>
                                 </h3>
@@ -58,7 +58,7 @@ const getPrimaryCategory = (post: any) =>
                                         SaiFinance Team • {time} min read
                                     </span>
                                     <a
-                                        href={`/blog/${post.slug}`}
+                                        href={/blog/${post.slug}}
                                         class="font-Arial text-[13px] font-semibold text-[#1E2E4A] hover:text-primary"
                                     >
                                         Read more &#8594;
