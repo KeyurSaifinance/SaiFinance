@@ -3,12 +3,9 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
-const wpApiUrl = import.meta.env.PUBLIC_WP_API_URL || "";
-const wpBaseUrl = wpApiUrl
-  ? wpApiUrl.replace(/\/wp-json\/wp\/v2\/?$/i, "")
-  : "https://saifinance.artisanalbyte.com";
-// CF7 REST endpoints require the numeric form ID (post ID).
-const cf7FormId = 10;
+const wpBaseUrl = "https://wp.saifinance.com.au";
+// CF7 REST endpoints require the numeric form ID (post ID). Shortcode id="11dd19b" maps to form 40.
+const cf7FormId = 40;
 const cf7Endpoint = wpBaseUrl
   ? `${wpBaseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7FormId}/feedback`
   : "";
