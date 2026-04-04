@@ -3,12 +3,20 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
 
-const wpBaseUrl = "https://wp.saifinance.com.au";
-// CF7 REST endpoints require the numeric form ID (post ID). Shortcode id="11dd19b" maps to form 40.
-const cf7FormId = 40;
-const cf7Endpoint = wpBaseUrl
+const wpApiUrl = (import.meta.env.PUBLIC_WP_API_URL || "").trim();
+const wpBaseUrl = (
+    import.meta.env.PUBLIC_CF7_BASE_URL ||
+    (wpApiUrl ? wpApiUrl.replace(/\/wp-json\/wp\/v2\/?$/i, "") : "")
+).trim();
+const cf7FormId = Number.parseInt(
+    (import.meta.env.PUBLIC_CF7_FORM_ID || "").toString().trim(),
+    10
+);
+const hasValidCf7FormId = Number.isFinite(cf7FormId) && cf7FormId > 0;
+const cf7Endpoint = wpBaseUrl && hasValidCf7FormId
   ? `${wpBaseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7FormId}/feedback`
   : "";
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
 ---
 
 <Layout>
@@ -90,7 +98,18 @@ const cf7Endpoint = wpBaseUrl
                         placeholder="Your Message"></textarea>
                 </div>
 
-                <input type="hidden" name="_wpcf7" id="wpcf7-id" value={cf7FormId} />
+                {
+                    turnstileSiteKey && (
+                        <div class="mt-8 flex flex-col gap-3">
+                            <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+                            <span class="hidden text-[12px] text-red-600" data-error="turnstile">
+                                Please verify that you are human.
+                            </span>
+                        </div>
+                    )
+                }
+
+                <input type="hidden" name="_wpcf7" id="wpcf7-id" value={hasValidCf7FormId ? cf7FormId : 0} />
                 <input type="hidden" name="_wpcf7_version" id="wpcf7-version" value="" />
                 <input type="hidden" name="_wpcf7_locale" id="wpcf7-locale" value="" />
                 <input type="hidden" name="_wpcf7_unit_tag" id="wpcf7-unit-tag" value="" />
@@ -297,6 +316,12 @@ const cf7Endpoint = wpBaseUrl
     </Fragment>
 </Layout>
 
+{
+    turnstileSiteKey && (
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    )
+}
+
 <script>
     const form = document.querySelector("#contact-form") as HTMLFormElement | null;
     const thankYou = document.querySelector("#contact-thankyou") as HTMLElement | null;
@@ -304,6 +329,7 @@ const cf7Endpoint = wpBaseUrl
     const phoneInput = document.querySelector("#phone") as HTMLInputElement | null;
     const emailError = document.querySelector('[data-error="email"]') as HTMLElement | null;
     const phoneError = document.querySelector('[data-error="phone"]') as HTMLElement | null;
+    const turnstileError = document.querySelector('[data-error="turnstile"]') as HTMLElement | null;
     const submitError = document.querySelector('[data-error="submit"]') as HTMLElement | null;
     const wpcf7Version = document.querySelector("#wpcf7-version") as HTMLInputElement | null;
     const wpcf7Locale = document.querySelector("#wpcf7-locale") as HTMLInputElement | null;
@@ -384,12 +410,19 @@ const cf7Endpoint = wpBaseUrl
 
             const emailValid = emailInput.checkValidity() && emailInput.value.trim() !== "";
             const phoneValid = phoneInput.value.trim() !== "";
+            const hasTurnstile = Boolean(form.querySelector(".cf-turnstile"));
+            const turnstileToken =
+                (form.querySelector('input[name="cf-turnstile-response"]') as HTMLInputElement | null)
+                    ?.value
+                    ?.trim() || "";
+            const turnstileValid = !hasTurnstile || turnstileToken.length > 0;
 
             showError(emailError, !emailValid);
             showError(phoneError, !phoneValid);
+            showError(turnstileError, !turnstileValid);
             showError(submitError, false);
 
-            if (!emailValid || !phoneValid) {
+            if (!emailValid || !phoneValid || !turnstileValid) {
                 return;
             }
 
@@ -427,10 +460,16 @@ const cf7Endpoint = wpBaseUrl
                     const msg = data?.message || "Something went wrong. Please try again.";
                     if (submitError) submitError.textContent = msg;
                     showError(submitError, true);
+                    if ((window as any).turnstile?.reset) {
+                        (window as any).turnstile.reset();
+                    }
                 }
             } catch (error) {
                 if (submitError) submitError.textContent = "Something went wrong. Please try again.";
                 showError(submitError, true);
+                if ((window as any).turnstile?.reset) {
+                    (window as any).turnstile.reset();
+                }
             }
         });
     }
